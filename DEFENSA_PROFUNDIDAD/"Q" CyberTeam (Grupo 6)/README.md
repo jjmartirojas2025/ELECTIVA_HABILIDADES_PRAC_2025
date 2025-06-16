@@ -8,10 +8,10 @@
 - [X] MY. CARLOS URIBE :airplane:
 - [X] MY. MARIO GÓMEZ :airplane:
 - [X] MY. DANIEL TORRES :airplane:
-- [X] CC. JOHAN MARTINEZ :anchor:
-- [X] CC. RUBEN CONTRERAS :anchor:
 - [X] MY. MANUEL REY :boom::tractor:
 - [X] MY. ARTURO MAHECHA :boom::tractor:
+- [X] CC. JOHAN MARTINEZ :anchor:
+- [X] CC. RUBEN CONTRERAS :anchor:
 
 ![Cyber](https://i.gifer.com/origin/46/46400cbacaf8eb1b36a89cdcd7da6740_w200.webp) ![Cyber](https://i.gifer.com/origin/5a/5ab98406cc6c8fbba9ddb014c2bcdb80_w200.webp)
 

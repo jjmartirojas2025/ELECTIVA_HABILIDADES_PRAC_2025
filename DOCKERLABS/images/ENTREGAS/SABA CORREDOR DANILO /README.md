@@ -125,6 +125,9 @@ o	base64 -w 0: Evita saltos de línea.
 
 o	base64 -w 0: Evita saltos de línea.
 
+<img width="793" height="314" alt="IMAGEN 8" src="https://github.com/user-attachments/assets/fb498e6f-26ff-43ec-b89f-9ffed56b655d" />
+
+
 2.9. 9.	COMANDO: SUDO /usr/bin/ruby -e 'exec "/bin/bash"'
 
 •	Descripción: Ejecuta Bash desde Ruby como superusuario.

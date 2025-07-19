@@ -24,7 +24,8 @@ DOKER IMAGEN: Lista de imagenes descargadas
 
 DOKER RMI: Elimina una imagen
 
-![Herramientas Utilizadas](Image/1.png)
+![Copia Segura al Sistema Remoto](Images1.png)
+
 
 2.2. COMANDO: NETDISCOVER -i eth0 -r 172.17.0.0/16
 

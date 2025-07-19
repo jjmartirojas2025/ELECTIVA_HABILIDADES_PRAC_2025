@@ -70,6 +70,9 @@ o	-s: Puerto personalizado.
 
 o	-f: Detener al encontrar contraseña válida.
 
+<img width="1536" height="1024" alt="IMAGEN 4" src="https://github.com/user-attachments/assets/904d0140-2ca6-4283-bb61-1a16da4545b8" />
+
+
 2.5.5.	COMANDO: SCP carlota@172.17.0.2:/home/carlota/Desktop/fotos/vacaciones/imagen.jpg .
 
 •	Descripción: Copia el archivo imagen.jpg del servidor remoto a la máquina local.

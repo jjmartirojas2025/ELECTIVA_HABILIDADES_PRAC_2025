@@ -163,4 +163,22 @@ o	users: Lista usuarios conectados.
 3.    REALICE UN DIAGRAMA DE FLUJO DE TODO EL PROCEDIMIENTO REALIZADO.
 
 
+•	CopiarEditar
+•	flowchart TD
+•	    A[Inicio: Descargar imagen Docker] --> B[Ejecutar contenedor]
+•	    B --> C[Netdiscover: detectar IP]
+•	    C --> D[Nmap: escaneo de puertos]
+•	    D --> E[Hydra: fuerza bruta SSH]
+•	    E --> F[Conexión SSH exitosa]
+•	    F --> G[SCP: extraer imagen]
+•	    G --> H[Steghide: extraer archivo oculto]
+•	    H --> I[Base64 decode]
+•	    I --> J[Acceder a consola Ruby]
+•	    J --> K[Escalar privilegios a root]
+•	    K --> L[Verificar usuario: whoami]
+•	    L --> M[Fin del reto]
+
+
+![FLUJO GRAMA](https://github.com/user-attachments/assets/1d379adb-7def-4bc5-84db-9825f5ac8005)
+
   

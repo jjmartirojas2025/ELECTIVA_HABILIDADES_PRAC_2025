@@ -55,6 +55,9 @@ o	-p: Especifica puertos.
 
 o	-sS: Escaneo SYN stealth.
 
+![Uploading IMAGEN 3.png…](IMAGEN 3 png)
+
+
 2.4.COMANDO: HYDRA -L CARLOTA -P /USR/SHARE/WORDLISTS/ROCKYOU.TXT SSH://172.17.0.2 -T 10
 
 •	Descripción: Ataque de fuerza bruta SSH con usuario carlota, usando la lista rockyou.txt, 10 tareas paralelas.

@@ -40,6 +40,10 @@ o	-r 192.168.1.0/24: Rango de red diferente.
 
 o	-P: Muestra en modo pasivo.
 
+<img width="1024" height="1024" alt="IMAGEN 2" src="https://github.com/user-attachments/assets/a6686152-d3e5-418a-a483-d52ff6eabefd" />
+
+
+
 2.3.COMANDO: NMAP -SV -N -V 172.17.0.2
 
 •	Descripción: Escaneo con detección de versiones (-sV), sin resolución DNS (-n) y modo detallado (-v).

@@ -85,6 +85,7 @@ o	-P: Especificar puerto SSH.
 
 o	-r: Copia recursiva de directorios.
 
+
 2.6.6.	COMANDO: FILE IMAGEN.JPG
 
 •	Descripción: Muestra tipo de archivo y codificación.
@@ -96,6 +97,9 @@ o	file -i: Muestra tipo MIME
 o	file -i: Muestra tipo MIME
 
 o	file -z: Archivos comprimidos.
+
+<img width="1024" height="1024" alt="IMAGEN 5" src="https://github.com/user-attachments/assets/78a134d4-5763-4623-a111-eeca0e618db0" />
+
 
 2.7. 7.	COMANDO: STEGHIDE EXTRACT -SF IMAGEN.JPG
 
@@ -145,7 +149,12 @@ o	logname: Usuario del login
 
 o	users: Lista usuarios conectados.
 
+![IMAGEN 6](https://github.com/user-attachments/assets/1834fd78-8724-4c51-a1cb-406980d7857e)
+
+
 
 
 3.    REALICE UN DIAGRAMA DE FLUJO DE TODO EL PROCEDIMIENTO REALIZADO.
+
+
   

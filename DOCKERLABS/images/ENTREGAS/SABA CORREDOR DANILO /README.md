@@ -24,7 +24,8 @@ DOKER IMAGEN: Lista de imagenes descargadas
 
 DOKER RMI: Elimina una imagen
 
-![Copia Segura al Sistema Remoto](Images1.png)
+<img width="1024" height="1536" alt="IMAGEN 1" src="https://github.com/user-attachments/assets/9dd9f164-05be-442e-a77a-9e75ce0da049" />
+
 
 
 2.2. COMANDO: NETDISCOVER -i eth0 -r 172.17.0.0/16

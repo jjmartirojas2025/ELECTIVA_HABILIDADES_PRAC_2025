@@ -55,7 +55,7 @@ o	-p: Especifica puertos.
 
 o	-sS: Escaneo SYN stealth.
 
-![Uploading IMAGEN 3.png…](IMAGEN 3 png)
+<img width="1024" height="1024" alt="IMAGEN 3" src="https://github.com/user-attachments/assets/05569fe3-3c07-4df4-9461-4158efe92d67" />
 
 
 2.4.COMANDO: HYDRA -L CARLOTA -P /USR/SHARE/WORDLISTS/ROCKYOU.TXT SSH://172.17.0.2 -T 10

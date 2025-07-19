@@ -137,6 +137,9 @@ o	sudo -i: Acceso root con entorno de login.
 
 o	sudo ruby script.rb: Ejecuta script Ruby con privilegios.
 
+![IMAGEN 7](https://github.com/user-attachments/assets/ca13aa06-46ee-4235-8d96-ae8ac5e1fcf7)
+
+
 2.10. 10.	COMANDO: WHOAMI
 
 •	Descripción: Devuelve el usuario actual.

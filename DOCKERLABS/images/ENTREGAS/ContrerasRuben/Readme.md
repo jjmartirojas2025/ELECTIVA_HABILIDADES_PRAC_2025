@@ -24,7 +24,7 @@
 |-------------|-------------|
 | **Comando usado** | `sudo netdiscover -i docker0 -r 172.17.0.0/24` |
 | **Propósito** | Descubre hosts activos mediante requests ARP en la red Docker |
-| **Salida esperada** | `````` |
+| **Salida esperada** | <br/>Currently scanning: Finished! | Screen View: Unique Hosts<br/><br/>3 Captured ARP Req/Rep packets, from 2 hosts. Total size: 180<br/>_____________________________________________________________________________<br/> IP At MAC Address Count Len MAC Vendor / Hostname<br/>-----------------------------------------------------------------------------<br/>172.17.0.1 02:42:ac:11:00:01 1 60 Unknown vendor<br/>172.17.0.2 02:42:ac:11:00:02 2 120 Unknown vendor<br/> |
 
 | **Variantes útiles** | **Funcionalidad** | **Ejemplo de uso** |
 |---------------------|-------------------|--------------------|
@@ -32,6 +32,7 @@
 | `netdiscover -f -r 172.17.0.0/24` | Modo rápido con escaneo acelerado | Escaneo veloz para redes grandes |
 | `netdiscover -P -r 172.17.0.0/24` | Salida parseable para scripts | Automatización e integración |
 
+#Casos de uso reales: Identificación inicial de dispositivos IoT en redes corporativas, mapeo de segmentos VLAN durante auditorías, detección de rogue devices en infraestructuras críticas
 ---
 
 ## b) nmap – Escaneo Avanzado de Puertos y Servicios

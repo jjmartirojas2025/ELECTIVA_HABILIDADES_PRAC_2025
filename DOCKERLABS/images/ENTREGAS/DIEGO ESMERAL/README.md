@@ -1,4 +1,4 @@
-**Mayor DIEGO A. ESMERAL M.**
+### **Mayor DIEGO A. ESMERAL M.**
 
 
 # 🧪 Reto Amor - DockerLabs
@@ -118,6 +118,8 @@ echo "ZXNsYWNhc2FkZXBpbnlwb24=" | base64 -d; echo
 ```
 
 # 14. Escalada de privilegios
+
+![Escalada de privilegios](escalar%20privilegios.png)
 
 ```bash
 su oscar

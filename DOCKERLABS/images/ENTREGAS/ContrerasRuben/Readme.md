@@ -3,7 +3,7 @@
 
 # - **Rubén Dario Contreras Caballero**
 
-# :rotating_light::bulb: Puntos a desarrollar :bulb::rotating_light: 
+<h1 align="center">:rotating_light::bulb: Puntos a desarrollar :bulb::rotating_light:</h1> 
 
 ## :one: Realizar una investigación individual de cada una de las herramientas empleadas. Sintetice el resultado mediante un cuadro que explique su definición, funcionalidad y casos de uso.
 | Imagen | Herramienta | Definición ampliada | Funcionalidad completa | Casos de uso relevantes | Ejemplos específicos |

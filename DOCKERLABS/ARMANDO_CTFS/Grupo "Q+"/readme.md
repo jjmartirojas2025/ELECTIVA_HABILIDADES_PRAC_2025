@@ -2,8 +2,8 @@
 <h1 align="center">CTF Docker Hub – Usuario 'legion'</h1>
 <h1 align="center"><img width="1200" height="414" alt="image" src="https://github.com/user-attachments/assets/1ca295c0-977c-41b6-a724-16d57793c255" /></h1>
 
-# - **Rubén Dario Contreras Caballero**
-# - **Mauricio Gómez**
+# :eight_spoked_asterisk: **Rubén Dario Contreras Caballero**
+# :eight_spoked_asterisk: **Mauricio Gómez Rodríguez**
 
 <h1 align="center">:rotating_light::bulb:  :bulb::rotating_light:</h1> 
 

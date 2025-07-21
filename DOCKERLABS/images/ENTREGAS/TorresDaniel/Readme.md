@@ -24,43 +24,43 @@
 |     SCP              |     Herramienta basada en SSH para la transferencia segura de archivos.                                               |     Copiar archivos entre sistemas remotos o   locales de forma cifrada.                                | Transferencia de evidencias. Migrar   configuraciones o binarios. Automatizar copias seguras.
 |     SSH              |     Protocolo de red seguro para acceso remoto a través de una consola.                                               |     Conexión a sistemas remotos de forma segura   mediante cifrado.                                     |     - Acceso   remoto a servidores.     -   Administración de sistemas Linux.     - Túneles   SSH para acceso seguro.                          ||
 |     STEGHIDE         |     Herramienta de esteganografía para ocultar o extraer información   dentro de archivos (como imágenes o audio).    |     Inserta o recupera archivos secretos en   imágenes o sonidos.                                       | Ciberseguridad forense. CTFs   (Capture The Flag). Estudio   de técnicas de ocultación.                                         |
-COMPLEMENTO DEFINICIONES HERRAMIENTAS
+# COMPLEMENTO DEFINICIONES HERRAMIENTAS
 
-Docker
+# Docker
 Docker es una plataforma de virtualización ligera que permite empaquetar aplicaciones y sus dependencias en contenedores. Un contenedor es una unidad ejecutable estandarizada que incluye todo lo necesario para ejecutar una aplicación: código, bibliotecas, entorno y configuración.
 En ciberseguridad, Docker es ampliamente utilizado para crear entornos aislados, reproducibles y seguros para pruebas de herramientas, análisis de malware, prácticas de pentesting o despliegue de entornos CTF (Capture The Flag).
 
-Netdiscover
+# Netdiscover
 Netdiscover es una herramienta de reconocimiento pasivo o activo utilizada para descubrir direcciones IP activas y dispositivos conectados dentro de una red local (LAN).
 Emplea técnicas ARP (Address Resolution Protocol) para mapear direcciones MAC con sus respectivas direcciones IP, lo que lo hace ideal en redes donde no se cuenta con un servidor DHCP.
 Es útil para realizar un escaneo rápido de hosts vivos en una red interna antes de usar herramientas más profundas como nmap.
 
-Nmap
+# Nmap
 Nmap (Network Mapper) es una de las herramientas más potentes y conocidas en el ámbito del escaneo de redes y puertos. Permite descubrir hosts y servicios en una red mediante el envío de paquetes y el análisis de las respuestas.
 Entre sus funciones están: detección de sistemas operativos, escaneo de puertos abiertos, identificación de servicios y versiones, detección de firewalls, etc.
 Es esencial para la fase de reconocimiento activo durante un pentest.
 
-Gobuster
+# Gobuster
 Gobuster es una herramienta de fuerza bruta para directorios y archivos ocultos en servidores web.
 Utiliza diccionarios (wordlists) para enumerar rutas HTTP/HTTPS (como /admin, /login, etc.), subdominios o buckets en servicios como Amazon S3.
 Es muy utilizada para encontrar recursos ocultos no listados que podrían exponer vulnerabilidades.
 
-Hydra (o THC-Hydra)
+# Hydra (o THC-Hydra)
 Hydra es una herramienta para realizar ataques de fuerza bruta o ataques de diccionario contra varios servicios que requieren autenticación.
 Soporta múltiples protocolos como FTP, SSH, HTTP, RDP, SMB, Telnet, entre otros.
 Es útil en pruebas de penetración para identificar credenciales débiles o por defecto en servicios expuestos.
 
-SCP (Secure Copy Protocol)
+# SCP (Secure Copy Protocol)
 SCP es un protocolo basado en SSH que permite copiar archivos de manera segura entre un host local y uno remoto, o entre dos hosts remotos.
 Usa cifrado SSH para proteger los datos en tránsito.
 En ciberseguridad, se emplea para transferir herramientas o evidencias entre máquinas durante operaciones ofensivas o forenses.
 
-SSH (Secure Shell)
+# SSH (Secure Shell)
 SSH es un protocolo criptográfico que permite establecer una conexión segura entre dos sistemas, normalmente para administrar sistemas remotos de forma segura mediante una consola de comandos.
 También permite túneles cifrados, reenvío de puertos, copias de archivos (con scp o sftp) y ejecución remota de comandos.
 Es clave en la administración segura de sistemas y también en la post-explotación cuando se obtiene acceso remoto a un servidor.
 
-Steghide
+# Steghide
 Steghide es una herramienta de esteganografía que permite ocultar archivos dentro de otros archivos portadores, como imágenes (JPEG/BMP) o archivos de audio (WAV).
 Soporta cifrado y compresión, y requiere una frase de contraseña para incrustar o extraer la información.
 Se usa tanto para ocultar datos como para extraer información oculta durante análisis forense o desafíos CTF.

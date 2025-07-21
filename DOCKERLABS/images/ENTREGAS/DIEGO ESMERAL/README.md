@@ -53,6 +53,7 @@ cd Documents/amor
 chmod +x auto_deploy.sh
 ./auto_deploy.sh amor.tar
 ```
+![Despliegue](Despliegue.png)
 
 # 4. Obtener interfaz de red
 
@@ -79,7 +80,7 @@ gobuster dir -u http://172.17.0.2/ -w /usr/share/wordlists/dirbuster/directory-l
 
 # 8. Fuerza bruta SSH
 
-![Fuerza Bruta](Fuerza bruta SSH.png)
+![Fuerza bruta](Fuerza%20bruta%20SSH.png)
 
 ```bash
 hydra -l carlota -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 10
@@ -144,5 +145,4 @@ Detectar archivo con datos esteganográficos.
 
 Decodificar contraseña y escalar privilegios a root.
 
-![Herramientas de Ciberseguridad y sus Aplicaciones](Images/27.png)
 

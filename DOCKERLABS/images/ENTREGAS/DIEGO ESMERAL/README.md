@@ -1,14 +1,11 @@
 **Mayor DIEGO A. ESMERAL M.**
 
-![Diagrama de Flujo](DiagrammeAMOR.png)
 
 # 🧪 Reto Amor - DockerLabs
 
 Este repositorio documenta el desarrollo completo del laboratorio **Reto Amor** de la plataforma [DockerLabs.es](https://dockerlabs.es/), nivel **Fácil**. El objetivo fue desplegar una máquina vulnerable en Docker, realizar tareas de reconocimiento, explotación y escalamiento de privilegios mediante herramientas de hacking ético.
 
-
-
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 📦 Requisitos Previos
 
@@ -16,7 +13,7 @@ Este repositorio documenta el desarrollo completo del laboratorio **Reto Amor** 
 - Docker instalado: `sudo apt install docker.io`
 - Carpeta `amor` transferida al entorno Kali mediante `scp`.
 
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 🔧 Herramientas Empleadas
 
@@ -31,11 +28,12 @@ Este repositorio documenta el desarrollo completo del laboratorio **Reto Amor** 
 | **STEGHIDE** | Esteganografía en imágenes/audio. | Extrae/oculta archivos en JPG/WAV. | CTF, forense, comunicaciones ocultas. |
 | **BASE64** | Codificación binaria a texto. | Decodifica datos encubiertos. | Mensajes ocultos, manipulación de datos. |
 
----
-
-## 🛠️ Desglose de Comandos Utilizados
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ```bash
+## 🛠️ Desglose de Comandos Utilizados
+
+
 # 1. Transferir carpeta
 scp -r amor kali@192.168.1.12:/home/kali/Documents/
 
@@ -82,7 +80,17 @@ su oscar
 sudo -l
 sudo /usr/bin/ruby -e 'exec "/bin/bash"'
 
-✅ Resultado Final
+```
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🧠 Diagrama de flujo
+
+![Diagrama de Flujo](DiagrammeAMOR.png)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 💬 Resultado Final
+
 Al finalizar el laboratorio se logra:
 
 Identificar servicios expuestos (22, 80).
@@ -92,3 +100,7 @@ Obtener acceso SSH por fuerza bruta.
 Detectar archivo con datos esteganográficos.
 
 Decodificar contraseña y escalar privilegios a root.
+
+![Herramientas de Ciberseguridad y sus Aplicaciones](Images/27.png)
+
+![Amor](Images/28.png)

@@ -37,11 +37,109 @@ El reto CTF (Capture The Flag) de Docker Hub dirigido al usuario 'legion', es un
 
 
 
-## :one: 
+## :one: Introducción
+Este informe documenta el proceso para resolver un reto CTF en Docker consistente en acceder mediante SSH a un contenedor Ubuntu con el usuario 'legion'. La metodología incluye la interpretación de pistas para deducir la contraseña, la configuración del laboratorio, la generación de diccionarios personalizados y el uso de Hydra para realizar ataques de fuerza bruta, todo con enfoque técnico y práctico, adecuado para ambientes de formación y auditorías de ciberseguridad.
 
-## :two: 
+## :two: Descripción del Escenario
+Entorno: Contenedor Docker basado en Ubuntu.
 
-## :three: 
+Usuario objetivo: legion
+
+Acceso buscado: Contraseña de legion vía SSH (puerto redirigido, típicamente 2222).
+
+Herramientas utilizadas: Crunch, Hydra, SSH, Docker.
+
+## :three: Configuración y Preparación del Entorno
+A. Obtención y transferencia del laboratorio
+Descargar desde el repositorio de trabajo el paquete del reto.
+
+Transferir el archivo comprimido al entorno Kali Linux con:
+
+bash
+scp usuario@host:~/Descargas/reto-legion.zip ~/reto/
+Descomprimir y ubicar los archivos necesarios:
+
+bash
+unzip reto-legion.zip
+cd reto-legion/
+B. Instalación y despliegue del contenedor
+Instalar Docker si es necesario:
+
+bash
+sudo apt update && sudo apt install docker.io
+Ejecutar el contenedor exponiendo el puerto SSH:
+
+bash
+docker run -d -p 2222:22 --name ctf-legion ubuntu-ssh-retocftf:latest
+Verificar estado del contenedor y la red Docker:
+
+bash
+docker ps
+ip a
+
+## :four: Resolución de la Contraseña a través de Enigmas
+El reto presenta un acertijo en el que cada línea aporta indicios sobre una letra de la contraseña, todas relacionadas con palabras clave específicas. El análisis cuidadoso de cada pista permite construir el posible password, valorando sinónimos, fonética y posiciones en palabras dadas.
+
+Ejemplo básico de razonamiento:
+
+Primera letra: aparece en “esfera” → “e”
+
+Segunda letra: contenida en “pasto” → “a”
+
+Siguientes: determinar patrones o aparición en palabras sugeridas.
+
+Última: suena como final de “sol” → “l”
+
+De este modo, se construye una contraseña probable que se verificará experimentalmente.
+
+## :five: Generación de Diccionarios con Crunch
+Para abarcar variantes de la contraseña, se crea un diccionario adaptado con reglas impuestas por el acertijo:
+
+bash
+crunch 5 5 -t E@@G* -o posibles.txt
+-t E@@G* define una máscara que varía posiciones intermedias y añade flexibilidad a la búsqueda.
+
+O bien, para cubrir combinaciones alfabéticas:
+
+bash
+crunch 5 5 -f /usr/share/crunch/charset.lst alpha -o lista-completa.txt
+Se recomienda personalizar la máscara para enfocarse en posibles letras identificadas en el análisis del acertijo.
+
+## :six: Ataque de Fuerza Bruta con Hydra
+Una vez listo el diccionario, se ejecuta Hydra para automatizar el ataque contra SSH, empleando el usuario objetivo y el archivo de contraseñas:
+
+bash
+hydra -l legion -P posibles.txt ssh://localhost -s 2222
+Donde:
+
+-l legion define el usuario a atacar.
+
+-P posibles.txt es la ruta del diccionario.
+
+ssh://localhost -s 2222 conecta al servicio SSH dockerizado.
+
+Se espera que Hydra muestre el intento exitoso indicando la contraseña válida hallada en el diccionario.
+
+## :seven: Acceso SSH y Obtención de la Bandera
+Con la contraseña obtenida, se accede al contenedor:
+
+bash
+ssh legion@localhost -p 2222
+Una vez en la terminal remota, se navega para encontrar la flag o el archivo de validación del reto:
+
+bash
+ls
+cat flag.txt
+
+## :eight: Recomendaciones y Buenas Prácticas
+Documentar claramente cada comando y hallazgo relevante para asegurar la trazabilidad y facilitar auditorías externas.
+
+Cambiar periódicamente las credenciales por defecto o evidentes en contenedores expuestos.
+
+Integrar técnicas de análisis forense digital para casos en los que la flag quede protegida por varios niveles de seguridad.
+
+## :nine: Conclusión
+Este informe presenta una estrategia alternativa para la resolución del reto CTF orientado al acceso por SSH en un contenedor Docker. Se enfatiza el análisis lógico del acertijo, la creación racional de diccionarios personalizados y el uso sistemático de las herramientas de pentesting de manera documentada y reproducible para maximizar el aprendizaje y la robustez de las prácticas de ciberseguridad.
 
 
 

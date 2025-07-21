@@ -1,7 +1,9 @@
 <h1 align="center">TALLER INDIVIDUAL</h1>
 <br><br>
 
-
+<div align="center">
+  <img width="400" alt="ChatGPT Image 17 jul 2025, 11_48_51 a m" src="https://github.com/user-attachments/assets/9ff6cfbf-6449-49b8-ab58-0f2b8d183232" />
+</div>
 
 <br><br>
 

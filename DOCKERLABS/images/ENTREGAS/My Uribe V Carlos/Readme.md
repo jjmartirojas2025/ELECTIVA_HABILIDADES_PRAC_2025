@@ -1,6 +1,6 @@
-# Reto Amor - DockerLabs ✨
+# **<p align="center">Reto Amor - DockerLabs ✨</p>**
 
-**My. Uribe Vergara Carlos Augusto**
+**<p align="center">My. Uribe Vergara Carlos Augusto</p>**
 
 ---
 

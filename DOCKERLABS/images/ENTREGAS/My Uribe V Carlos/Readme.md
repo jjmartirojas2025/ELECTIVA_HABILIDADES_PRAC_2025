@@ -134,35 +134,73 @@ Una vez desplegado el laboratorio y explicado el paso a paso del mismo, ahora po
 | `docker.io`     | Plataforma de contenedores para despliegue y prueba de servicios.          | Ejecutar entornos aislados reproducibles.                                    | DevOps, laboratorios, pruebas de seguridad.               |
 | `base64`        | Codificador/decodificador base64.                                          | Transformar texto para transmisiones o almacenamiento.                      | Decodificación de mensajes, CTF, criptografía básica.     |
 | `sudo`/`ruby`   | Escalada de privilegios / ejecución de scripts con permisos.               | Ejecutar comandos como root / crear shell interactivo.                      | Post-explotación, privilege escalation.                   |
+| `unzip`         | Herramienta de descompresión de archivos ZIP.                             | Extraer el contenido de archivos .zip.                                      | Manejo de recursos comprimidos, despliegue de laboratorios.|
+| `chmod`         | Comando para cambiar permisos de archivos.                               | Otorgar o restringir permisos de ejecución, lectura, escritura.             | Preparación de scripts, hardening básico.                 |
+| `ip add`        | Comando para ver configuración de red.                                   | Muestra interfaces, direcciones IP y estado.                                | Reconocimiento, troubleshooting de red.                   |
+| `file`          | Determina el tipo de archivo.                                             | Identifica el formato y codificación de archivos.                           | Análisis forense, validación de extensiones.              |
+| `ssh`           | Protocolo seguro para acceso remoto.                                     | Conectarse a sistemas de manera cifrada.                                    | Administración remota, pentesting.                        |
+| `netdiscover`   | Herramienta de descubrimiento de hosts en red.                           | Muestra IPs activas, MACs y vendors conectados a la red.                    | Reconocimiento de red, pentesting, inventario.            |
 
 ---
 
 ## Variantes de Comandos Empleados
 
+A continuación, se describen variantes técnicas de cada herramienta utilizada en el laboratorio, seleccionando aquellas que realizan funciones equivalentes a las ejecutadas en el entorno práctico:
+
 ### `nmap`
-- `-sC`: Usa scripts por defecto.
-- `-A`: Detección completa (OS, traceroute, versiones).
-- `-Pn`: Desactiva ping previo (para firewalls).
+- `sudo nmap -sS -p- 172.17.0.2`
+- `sudo nmap -p 1-65535 -T4 -sV 172.17.0.2`
+- `sudo nmap -sS --min-rate=10000 -vv -p- 172.17.0.2`
 
 ### `hydra`
-- `-L`: Archivo de usuarios.
-- `-e ns`: Prueba con contraseñas vacías o iguales al usuario.
-- `-vV`: Modo verboso con muestra de intentos.
+- `hydra -l carlota -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2`
+- `hydra -L users.txt -P pass.txt ssh://172.17.0.2`
+- `hydra -l carlota -p password123 ssh://172.17.0.2`
 
 ### `gobuster`
-- `-x php,html`: Busca extensiones específicas.
-- `-t 50`: Threads (hilos) para acelerar.
-- `-o resultado.txt`: Guarda la salida.
+- `gobuster dir -u http://172.17.0.2 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`
+- `gobuster dir -u http://172.17.0.2 -w wordlist.txt -t 30`
+- `gobuster dir -u http://172.17.0.2 -w wordlist.txt -x .php,.txt`
 
 ### `steghide`
-- `--info`: Muestra información sobre el archivo.
-- `--embed`: Inserta archivo.
-- `--pass "clave"`: Define contraseña.
+- `steghide extract -sf imagen.jpg`
+- `steghide --extract -sf imagen.jpg -p ""`
+- `steghide --info imagen.jpg`
 
 ### `scp`
-- `-P 2222`: Especifica puerto personalizado.
-- `-v`: Verbose (muestra proceso).
-- `-i clave.pem`: Usa una clave privada para conectarse.
+- `scp carlota@172.17.0.2:/ruta/archivo /home/kali/`
+- `scp -r directorio/ user@ip:/destino`
+- `scp -i clave.pem archivo user@ip:/destino`
+
+### `unzip`
+- `unzip amor.zip`
+- `unzip -d /home/kali/Documents amor.zip`
+- `unzip -o archivo.zip`
+
+### `chmod`
+- `chmod +x auto_deploy.sh`
+- `chmod 700 archivo`
+- `chmod u+x archivo`
+
+### `ip add`
+- `ip add`
+- `ip a`
+- `ip addr show docker0`
+
+### `file`
+- `file imagen.jpg`
+- `file -b imagen.jpg`
+- `file /home/*/*.jpg`
+
+### `ssh`
+- `ssh carlota@172.17.0.2`
+- `ssh -p 22 carlota@172.17.0.2`
+- `ssh -o StrictHostKeyChecking=no carlota@172.17.0.2`
+
+### `netdiscover`
+- `netdiscover -i docker0 -r 172.17.0.0/24`
+- `netdiscover -r 192.168.1.0/24`
+- `netdiscover -p`
 
 ---
 

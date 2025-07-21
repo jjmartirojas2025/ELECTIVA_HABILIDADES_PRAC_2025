@@ -1,5 +1,8 @@
 # 🧪 Reto CTF Docker Hub – Usuario 'legion'
-# URIBE / REY / TORRES / GÓMEZ ORTEGA
+
+<p align="center">
+  <img src="Imagenes/GRUPO URTG.png">
+</p>
 
 Este repositorio documenta paso a paso la resolución del reto CTF basado en un contenedor Docker que expone un servicio SSH con el usuario `legion`, cuya contraseña debe ser descubierta a partir de un acertijo.
 

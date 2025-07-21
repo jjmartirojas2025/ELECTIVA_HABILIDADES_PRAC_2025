@@ -1,5 +1,6 @@
 <h1 align="center">TALLER ELECTIVA HABILIDADES PRACTICAS EN EL CIBERESPACIO</h1>
 <h1 align="center"><img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/b28f545e-7366-403e-9e06-4882728bf873" /></h1>
+
 # - **Rubén Dario Contreras Caballero**
 
 <h1 align="center">:rotating_light::bulb: Puntos a desarrollar :bulb::rotating_light:</h1> 
@@ -18,6 +19,7 @@
 
 ## :two: Explicar en detalle cada uno de los comandos empleados en el anterior CTF; realizando un desglose del mismo y citando al menos tres alternativas (si aplica) de variantes del comando para las herramientas empleadas, este punto amplia el ejercicio anterior.
 ## a) netdiscover – Descubrimiento de Hosts en Red Local
+<img width="400" height="275" alt="image" src="https://github.com/user-attachments/assets/95741d61-d4e5-4331-bd16-72582ac095f8" />
 
 | **Aspecto** | **Detalle** |
 |-------------|-------------|
@@ -35,6 +37,7 @@
 ---
 
 ## b) nmap – Escaneo Avanzado de Puertos y Servicios
+<img width="1268" height="664" alt="image" src="https://github.com/user-attachments/assets/3a0d426b-a71d-4f17-9eb1-a4db830828b2" />
 
 | **Aspecto** | **Detalle** |
 |-------------|-------------|
@@ -52,6 +55,7 @@
 ---
 
 ## c) gobuster – Enumeración de Directorios Web
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/db83c7dd-3ad1-41cb-95cf-0bbe3e075fac" />
 
 | **Aspecto** | **Detalle** |
 |-------------|-------------|
@@ -69,6 +73,7 @@
 ---
 
 ## d) hydra – Ataque de Fuerza Bruta SSH
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/79cca182-9401-4903-906e-667643258506" />
 
 | **Aspecto** | **Detalle** |
 |-------------|-------------|
@@ -86,6 +91,7 @@
 ---
 
 ## e) scp – Transferencia Segura de Archivos
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/7e3574e6-d115-48d4-a7aa-df9403949786" />
 
 | **Aspecto** | **Detalle** |
 |-------------|-------------|
@@ -103,6 +109,7 @@
 ---
 
 ## f) steghide – Análisis de Esteganografía
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fec31ed2-cd05-4196-ab79-c287204a5d4e" />
 
 | **Aspecto** | **Detalle** |
 |-------------|-------------|
@@ -120,6 +127,7 @@
 ---
 
 ## g) Decodificación Base64 y Escalada de Privilegios
+<img width="768" height="300" alt="image" src="https://github.com/user-attachments/assets/b8ec7bef-2a75-4892-98dc-3b24bb3a0e9c" />
 
 | **Comando** | **Propósito** | **Salida esperada** |
 |-------------|---------------|---------------------|

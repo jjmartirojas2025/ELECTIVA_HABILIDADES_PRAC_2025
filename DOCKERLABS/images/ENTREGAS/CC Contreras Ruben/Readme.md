@@ -1,5 +1,5 @@
 # **TALLER ELECTIVA HABILIDADES PRACTICAS EN EL CIBERESPACIO**
-## - **Rubén Dario Contreras Caballero**
+# - **Rubén Dario Contreras Caballero**
 
 # :rotating_light::skull: Puntos a desarrollar :skull::rotating_light: 
 

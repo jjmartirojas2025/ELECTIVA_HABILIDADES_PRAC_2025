@@ -24,7 +24,15 @@
 |-------------|-------------|
 | **Comando usado** | `sudo netdiscover -i docker0 -r 172.17.0.0/24` |
 | **Propósito** | Descubre hosts activos mediante requests ARP en la red Docker |
-| **Salida esperada** | ´´´´ |
+| **Salida esperada** | 2 hosts encontrados:<br>• 172.17.0.1<br>• 172.17.0.2 |
+Currently scanning: Finished!   |   Screen View: Unique Hosts
+
+3 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 180
+_____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname
+-----------------------------------------------------------------------------
+172.17.0.1     02:42:ac:11:00:01      1      60  Unknown vendor
+172.17.0.2     02:42:ac:11:00:02      2     120  Unknown vendor
 
 | **Variantes útiles** | **Funcionalidad** | **Ejemplo de uso** |
 |---------------------|-------------------|--------------------|

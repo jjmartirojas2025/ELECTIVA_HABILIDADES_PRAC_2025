@@ -119,3 +119,65 @@ whoami
 ```
 
 ---
+
+## Cuadro de herramientas utilizadas
+| Herramienta     | Definición                                                                 | Funcionalidad principal                                                     | Casos de uso comunes                                      |
+|-----------------|----------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------|
+| `nmap`          | Network Mapper, escáner de red.                                           | Descubrir hosts, puertos abiertos y servicios en red.                       | Pentesting, auditorías de red, reconocimiento.           |
+| `hydra`         | Herramienta de fuerza bruta de logins.                                     | Realizar ataques por diccionario a servicios como SSH, FTP, HTTP, etc.     | Test de credenciales, CTF, auditorías de acceso.          |
+| `gobuster`      | Buscador de directorios y archivos ocultos en aplicaciones web.            | Enumerar directorios, recursos y endpoints ocultos.                         | Fuzzing web, test de exposición.                         |
+| `steghide`      | Herramienta para ocultar y extraer archivos dentro de imágenes o audio.   | Esteganografía: ocultar/extraer información.                                | CTF, análisis forense, canales encubiertos.               |
+| `scp`           | Secure Copy Protocol.                                                      | Transferencia de archivos remota por SSH.                                    | Carga/descarga de recursos, backup seguro.                |
+| `docker.io`     | Plataforma de contenedores para despliegue y prueba de servicios.          | Ejecutar entornos aislados reproducibles.                                    | DevOps, laboratorios, pruebas de seguridad.               |
+| `base64`        | Codificador/decodificador base64.                                          | Transformar texto para transmisiones o almacenamiento.                      | Decodificación de mensajes, CTF, criptografía básica.     |
+| `sudo`/`ruby`   | Escalada de privilegios / ejecución de scripts con permisos.               | Ejecutar comandos como root / crear shell interactivo.                      | Post-explotación, privilege escalation.                   |
+
+---
+
+## Variantes de Comandos Empleados
+
+### `nmap`
+- `-sC`: Usa scripts por defecto.
+- `-A`: Detección completa (OS, traceroute, versiones).
+- `-Pn`: Desactiva ping previo (para firewalls).
+
+### `hydra`
+- `-L`: Archivo de usuarios.
+- `-e ns`: Prueba con contraseñas vacías o iguales al usuario.
+- `-vV`: Modo verboso con muestra de intentos.
+
+### `gobuster`
+- `-x php,html`: Busca extensiones específicas.
+- `-t 50`: Threads (hilos) para acelerar.
+- `-o resultado.txt`: Guarda la salida.
+
+### `steghide`
+- `--info`: Muestra información sobre el archivo.
+- `--embed`: Inserta archivo.
+- `--pass "clave"`: Define contraseña.
+
+### `scp`
+- `-P 2222`: Especifica puerto personalizado.
+- `-v`: Verbose (muestra proceso).
+- `-i clave.pem`: Usa una clave privada para conectarse.
+
+---
+
+## Diagrama de flujo del procedimiento
+
+imagen
+
+---
+
+## Conclusión
+Este ejercicio práctico permite aplicar técnicas de reconocimiento, explotación y escalada de privilegios dentro de un entorno aislado usando Docker. Es ideal para fortalecer las competencias de pentesting, esteganografía y gestión de herramientas de ciberseguridad en un escenario realista.
+
+---
+
+## Fuentes
+- [https://dockerlabs.es](https://dockerlabs.es)
+- [https://nmap.org](https://nmap.org)
+- [https://github.com/OJ/gobuster](https://github.com/OJ/gobuster)
+- [https://tools.kali.org/password-attacks/hydra](https://tools.kali.org/password-attacks/hydra)
+- [https://linux.die.net/man/1/steghide](https://linux.die.net/man/1/steghide)
+- [https://github.com](https://github.com)

@@ -32,7 +32,7 @@
 | `netdiscover -f -r 172.17.0.0/24` | Modo rápido con escaneo acelerado | Escaneo veloz para redes grandes |
 | `netdiscover -P -r 172.17.0.0/24` | Salida parseable para scripts | Automatización e integración |
 
-# Casos de uso reales: Identificación inicial de dispositivos IoT en redes corporativas, mapeo de segmentos VLAN durante auditorías, detección de rogue devices en infraestructuras críticas
+## **Casos de uso reales:** Identificación inicial de dispositivos IoT en redes corporativas, mapeo de segmentos VLAN durante auditorías, detección de rogue devices en infraestructuras críticas
 ---
 
 ## b) nmap – Escaneo Avanzado de Puertos y Servicios

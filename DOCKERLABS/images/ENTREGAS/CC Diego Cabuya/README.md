@@ -64,12 +64,12 @@
 
 ## 🚀 Despliegue del laboratorio
 
-### `unzip nombre_maquina.zip`
+### `unzip AMOR.zip`
 
 - **a) Herramienta utilizada:** `unzip`
 - **b) Función del comando:** Descomprime el archivo `.zip` con la máquina virtual.
 - **c) Parámetros:**
-  - `nombre_maquina.zip`: archivo comprimido a descomprimir.
+  - `AMOR.zip`: archivo comprimido a descomprimir.
 - **d) Variantes:**
   - `unzip -l archivo.zip`: lista contenido sin extraer.
   - `unzip -d destino archivo.zip`: define directorio destino.
@@ -279,3 +279,5 @@
 - **e) Herramienta alterna:** `id`, `users`
 
 # 3. DIAGRAMA DE FLUJO
+
+![Diagram de Flujob](images/Flujo_Laboratorio_CTF.png)

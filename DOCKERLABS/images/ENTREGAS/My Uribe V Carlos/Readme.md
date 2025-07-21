@@ -119,7 +119,7 @@ whoami
 
 ---
 
-## Cuadro de herramientas utilizadas
+## 1. Cuadro de herramientas utilizadas
 
 Una vez desplegado el laboratorio y explicado el paso a paso del mismo, ahora podemos explicar las herramientas utilizadas, así:
 
@@ -143,7 +143,7 @@ Una vez desplegado el laboratorio y explicado el paso a paso del mismo, ahora po
 
 ---
 
-## Variantes de Comandos Empleados
+## 2. Variantes de Comandos Empleados
 
 A continuación, se describen variantes técnicas de cada herramienta utilizada en el laboratorio, seleccionando aquellas que realizan funciones equivalentes a las ejecutadas en el entorno práctico:
 
@@ -204,7 +204,7 @@ A continuación, se describen variantes técnicas de cada herramienta utilizada 
 
 ---
 
-## Diagrama de flujo del procedimiento
+## 3. Diagrama de flujo del procedimiento
 
 imagen
 

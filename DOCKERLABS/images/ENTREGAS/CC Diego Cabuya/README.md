@@ -235,6 +235,8 @@
   - `steghide --extract -sf imagen.jpg -p clave`
 - **e) Herramienta alterna:** `zsteg`, `stegsolve`
 
+![NN](images/NN.PNG)
+![OO](images/OO.PNG)
 ---
 
 ### `echo "ZXNsYWNhc2FkZXBpbnlwb24=" | base64 -d; echo`
@@ -250,6 +252,8 @@
   - `cat archivo.txt | base64 -d`
   - `base64 -d archivo > salida.txt`
 - **e) Herramienta alterna:** `openssl enc`, `CyberChef`
+
+![PP](images/PP.PNG)
 
 ---
 

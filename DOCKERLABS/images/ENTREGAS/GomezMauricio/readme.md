@@ -26,17 +26,26 @@
 2.	**COMANDOS EMPLEADOS**
    
 a) netdiscover
+
 Comando usado:
+
 Text: sudo netdiscover -i docker0 -r 172.17.0.0/24
+
 •	Función: Escanea la interfaz docker0 en el rango de IPs 172.17.0.0/24 para detectar hosts activos.
+
 •	Parámetros:
-•	-i docker0: Especifica la interfaz de red.
-•	-r 172.17.0.0/24: Rango de IP a analizar.
+ 
+ -i docker0: Especifica la interfaz de red.
+ 
+ -r 172.17.0.0/24: Rango de IP a analizar.
+ 
 •	Variantes:
-•	-P: Modo pasivo.
-•	-s <intervalo>: Intervalo de escaneo.
-Caso real alternativo:
-Detección de dispositivos IoT conectados no autorizados en una red universitaria tras una jornada de mantenimiento.
+
+ -P: Modo pasivo.
+
+ -s <intervalo>: Intervalo de escaneo.
+
+- Caso real alternativo: Detección de dispositivos IoT conectados no autorizados en una red universitaria tras una jornada de mantenimiento.
 
 b) nmap
 Comando usado:

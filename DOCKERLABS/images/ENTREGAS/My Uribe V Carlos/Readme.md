@@ -120,6 +120,10 @@ whoami
 ---
 
 ## Cuadro de herramientas utilizadas
+
+Una vez desplegado el laboratorio y explicado el paso a paso del mismo, ahora podemos explicar las herramientas utilizadas, así:
+
+
 | Herramienta     | Definición                                                                 | Funcionalidad principal                                                     | Casos de uso comunes                                      |
 |-----------------|----------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------|
 | `nmap`          | Network Mapper, escáner de red.                                           | Descubrir hosts, puertos abiertos y servicios en red.                       | Pentesting, auditorías de red, reconocimiento.           |

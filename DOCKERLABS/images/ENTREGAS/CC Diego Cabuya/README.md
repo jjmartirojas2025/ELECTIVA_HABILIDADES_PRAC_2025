@@ -60,7 +60,7 @@
   - `sudo curl -fsSL https://get.docker.com | sh` (instalación manual vía script)
 - **e) Herramienta alterna:** `snap`, `yum` (en CentOS)
 
-![INSTALLDOCKER](images/a_install_docker.png)
+![AA](images/a_install_docker.PNG)
 
 ---
 
@@ -93,6 +93,8 @@
   - `source auto_deploy.sh archivo`
 - **e) Herramienta alterna:** `make`, `docker-compose`
 
+![BB](images/b_deploy.PNG)
+
 ---
 
 ## 🔎 Escaneo
@@ -108,6 +110,8 @@
   - `ip addr show
 - **e) Herramienta alterna:** `ifconfig`
 
+![CC](images/c_ip_add.PNG)
+
 ---
 
 ### `sudo netdiscover -i docker0 -r 172.17.0.0/24`
@@ -122,6 +126,8 @@
   - `netdiscover -P`: modo pasivo.
   - `netdiscover -r 192.168.1.0/24`
 - **e) Herramienta alterna:** `arp-scan`, `nmap -sn`
+
+![DD](images/d_netdiscover.PNG)
 
 ---
 
@@ -140,6 +146,8 @@
   - `nmap -T4 target`
 - **e) Herramienta alterna:** `masscan`, `rustscan`
 
+![EE](images/e_nmap.PNG)
+
 ---
 
 ### `gobuster dir -u http://172.17.0.2/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`
@@ -155,6 +163,8 @@
   - `gobuster vhost -u http://host -w lista.txt`
   - `gobuster fuzz -u http://host/FUZZ -w lista.txt`
 - **e) Herramienta alterna:** `dirb`, `dirbuster`, `ffuf`
+
+![FF](images/f_gobuster.PNG)
 
 ---
 

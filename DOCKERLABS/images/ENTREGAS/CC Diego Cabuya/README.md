@@ -294,6 +294,8 @@
   - `who am i`
 - **e) Herramienta alterna:** `id`, `users`
 
+![LL](images/LL.PNG)
+
 # 3. DIAGRAMA DE FLUJO
 
 ![Diagram de Flujob](images/Flujo_Laboratorio_CTF.png)

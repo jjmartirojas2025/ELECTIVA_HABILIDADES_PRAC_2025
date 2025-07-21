@@ -33,7 +33,7 @@ El reto CTF (Capture The Flag) de Docker Hub dirigido al usuario 'legion', es un
 |------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 👨‍💻 Estudiantes, profesionales TI, abogados TIC      | - Comprensión integral de fases de ataque-defensa en entornos Docker.<br>- Práctica en recolección de evidencia digital legalmente válida.<br>- Mejora de capacidades para documentación técnica, compliance y análisis jurídico de incidentes.<br>- Fortalecimiento de ética y conocimientos actualizados en ciberseguridad y respuesta técnica.       |
 
-
+<h1 align="center"> :rotating_light::bulb: DESARROLLO :bulb::rotating_light: </h1> 
 
 
 

@@ -55,9 +55,9 @@ O para un diccionario basado en las letras del acertijo:
 crunch 5 5 -o posibles.txt -f /usr/share/crunch/charset.lst alpha -t %%@@@
 ```
 
-![Crunch](/Images/crunch_dic.png)
+![Crunch](Images/crunch_dic.png)
 
----
+-------
 
 ## 4. Uso de Hydra
 
@@ -72,7 +72,7 @@ hydra -l legion -P posibles.txt ssh://localhost -s 2222
 - `ssh://localhost`: protocolo y host.
 - `-s 2222`: puerto SSH mapeado en el contenedor.
 
-![Crunch](/Images/hydra_dic.png)
+![Crunch](Images/hydra_dic.png)
 
 ---
 
@@ -88,7 +88,7 @@ ssh legion@localhost -p 2222
 
 📸 **[Aquí se insertará la imagen del acceso exitoso vía SSH con el usuario `legion`]**
 
-![Resultado](/Images/ssh_conection.png)
+![Resultado](Images/ssh_conection.png)
 
 ---
 

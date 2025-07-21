@@ -53,7 +53,7 @@ cd Documents/amor
 chmod +x auto_deploy.sh
 ./auto_deploy.sh amor.tar
 ```
-![Despliegue](Despliegue.png)
+![Despliegue](Despliegue.jpg)
 
 # 4. Obtener interfaz de red
 
@@ -137,12 +137,9 @@ sudo /usr/bin/ruby -e 'exec "/bin/bash"'
 
 Al finalizar el laboratorio se logra:
 
-Identificar servicios expuestos (22, 80).
-
-Obtener acceso SSH por fuerza bruta.
-
-Detectar archivo con datos esteganográficos.
-
-Decodificar contraseña y escalar privilegios a root.
+- Identificar servicios expuestos (22, 80).
+- Obtener acceso SSH por fuerza bruta.
+- Detectar archivo con datos esteganográficos.
+- Decodificar contraseña y escalar privilegios a root.
 
 

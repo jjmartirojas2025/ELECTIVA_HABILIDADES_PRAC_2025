@@ -60,6 +60,8 @@
   - `sudo curl -fsSL https://get.docker.com | sh` (instalación manual vía script)
 - **e) Herramienta alterna:** `snap`, `yum` (en CentOS)
 
+![INSTALLDOCKER](images/a_install_docker.png)
+
 ---
 
 ## 🚀 Despliegue del laboratorio

@@ -5,7 +5,14 @@
 # :eight_spoked_asterisk: **Rubén Dario Contreras Caballero**
 # :eight_spoked_asterisk: **Mauricio Gómez Rodríguez**
 
+El reto CTF (Capture The Flag) de Docker Hub dirigido al usuario 'legion', es un ejercicio práctico y gamificado orientado a la seguridad informática y a la administración de contenedores Docker usando Kali Linux como entorno de pruebas.
 
+# Propósito y objetivo
+:triangular_flag_on_post: **Simular un entorno realista de hacking ético:** el reto prepara escenarios que desafían la capacidad del participante para explorar, identificar, vulnerar y mitigar servicios en un entorno contenido, permitiendo aprender técnicas de pentesting legal y seguro.
+
+:triangular_flag_on_post: Enseñar el manejo profesional de herramientas de ciberseguridad en infraestructuras modernas, empleando contenedores y automatización reproducible de laboratorios.
+
+:triangular_flag_on_post: Promover el razonamiento forense/técnico y la documentación detallada, útil en auditorías y peritajes digitales.
 
 
 ## :one: 

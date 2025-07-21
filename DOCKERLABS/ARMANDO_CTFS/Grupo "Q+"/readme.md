@@ -13,6 +13,12 @@ El reto CTF (Capture The Flag) de Docker Hub dirigido al usuario 'legion', es un
 :triangular_flag_on_post: Enseñar el manejo profesional de herramientas de ciberseguridad en infraestructuras modernas, empleando contenedores y automatización reproducible de laboratorios.
 
 :triangular_flag_on_post: Promover el razonamiento forense/técnico y la documentación detallada, útil en auditorías y peritajes digitales.
+                                                                                                                                                                       |
+| **Fases principales**           | 1. Despliegue y preparación del entorno.<br>2. Reconocimiento y mapeo de la red.<br>3. Enumeración de servicios y credenciales.<br>4. Explotación de accesos y privilegios.<br>5. Documentación y reporte.                                                                                                                                            |
+| **Herramientas empleadas**      | Kali Linux, Docker, netdiscover, nmap, gobuster, hydra, scp, steghide, su, sudo.                                                                                                                                                                                                                                                                         |
+| **Dinámica resumida**           | - Descargar el laboratorio y desplegarlo en Kali Linux.<br>- Descubrir la máquina objetivo y enumerar servicios.<br>- Fuzzing web y obtención de posibles usuarios.<br>- Bruteforce SSH y obtención de acceso.<br>- Extracción/análisis de archivos ocultos.<br>- Escalada de privilegios.<br>- Documentar hallazgos y pasos para informe final.             |
+| **Conceptos clave**             | Contenedores Docker, seguridad ofensiva en Linux, análisis y gestión forense digital, escalada de privilegios, administración de usuarios y generación de documentación técnico-jurídica.                                                                                                                            |
+| **Perfil de aprendizaje**       | Estudiantes, profesionales TI o abogados en derecho digital que quieran practicar manejo de evidencias digitales, ataques y defensas en entornos virtualizados, reforzar documentación y aplicación de mejores prácticas en ciberseguridad actual.                                                               |
 
 
 ## :one: 

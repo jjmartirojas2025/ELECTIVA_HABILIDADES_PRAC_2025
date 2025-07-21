@@ -9,6 +9,15 @@ DockerLabs es una plataforma que ofrece una serie de desafíos prácticos relaci
 
 ---
 
+## **Taller Individual**
+
+**1.** Realizar una investigación individual de cada una de las herramientas empleadas. Sintetice el resultado mediante un cuadro que explique su definición, funcionalidad y casos de uso.
+
+**2.** Explicar en detalle cada uno de los comandos empleados realizando un desglose del mismo y citando al menos tres alternativas (si aplica) de variantes del comando.
+
+**3.** Realice un diagrama de flujo de todo el procedimiento realizado.
+
+---
 ## Requisitos Previos
 - Sistema Kali Linux (actualizado).
 - Docker instalado.

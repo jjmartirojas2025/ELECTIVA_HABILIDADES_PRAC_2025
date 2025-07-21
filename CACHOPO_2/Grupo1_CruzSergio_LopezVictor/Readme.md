@@ -12,6 +12,10 @@ En este reto CTF, se trabajó sobre la máquina **Cachopo** del laboratorio de T
 A través de una correcta identificación de configuraciones erróneas y análisis detallado, se logró comprometer por completo el sistema objetivo. Este write-up documenta cada paso seguido para lograr el acceso a nivel **root**.
 
 ---
+## Uso de NMAP
+```bash
+nmap -p- -sCV --open -sS --min-rate 5000 -vvv -n -Pn 172.17.0.3
+``` 
 
 ## 1. Enumeración de Red
 
@@ -20,6 +24,9 @@ A través de una correcta identificación de configuraciones erróneas y anális
 ```bash
 arp-scan -I eth0 --localnet
 ```
+![nmap1](Images/cachopo_nmap1.png)
+
+![nmap2](Images/cachopo_nmap2.png)
 
 ### Descubrimiento de hosts activos
 

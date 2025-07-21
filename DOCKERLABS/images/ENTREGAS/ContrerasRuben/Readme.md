@@ -49,7 +49,7 @@
 | `nmap -sU --top-ports 1,000 172.17.0.2` | Escaneo UDP de puertos más comunes | `161/udp open snmp` |
 | `nmap --script vuln 172.17.0.2` | Detección de vulnerabilidades con NSE | `CVE-2014-6271 (Shellshock) detected` |
 
-## **Casos de uso reales:**
+## **Casos de uso reales:** Auditorías de cumplimiento en servidores financieros, validación de configuraciones de firewall en DMZ, evaluación de superficies de ataque en infraestructuras cloud
 ---
 
 ## c) gobuster – Enumeración de Directorios Web
@@ -66,7 +66,7 @@
 | `-t 50 -q` | 50 hilos en modo silencioso | Mayor velocidad sin output verbose |
 | `-r -k` | Seguir redirects, ignorar SSL | `/secure/ -> /login.php` |
 
-## **Casos de uso reales:**
+## **Casos de uso reales:** Descubrimiento de paneles administrativos en aplicaciones web corporativas, identificación de APIs REST no documentadas, mapeo de CMS para evaluaciones de seguridad
 ---
 
 ## d) hydra – Ataque de Fuerza Bruta SSH
@@ -83,7 +83,7 @@
 | `-s 2222` | Puerto SSH personalizado | `[2222][ssh] host: 172.17.0.2 login: admin password: 123456` |
 | `-C combo.txt -o results.txt` | Formato combinado usuario:password | Salida guardada en `results.txt` |
 
-## **Casos de uso reales:**
+## **Casos de uso reales:** Testing de políticas de contraseñas en Active Directory, validación de autenticación multi-factor, evaluación de resistencia ante ataques automatizados
 ---
 
 ## e) scp – Transferencia Segura de Archivos
@@ -100,7 +100,7 @@
 | `-P 2222 -i ~/.ssh/key.pem` | Puerto y clave específica | Transferencia a puerto 2222 |
 | `-v` | Modo verbose para debugging | `debug1: Authentication succeeded` |
 
-## **Casos de uso reales:**
+## **Casos de uso reales:** Transferencia de logs de auditoría a servidores centralizados, distribución de certificados SSL en infraestructuras distribuidas, migración de datos entre datacenters
 ---
 
 ## f) steghide – Análisis de Esteganografía
@@ -117,7 +117,7 @@
 | `--embed -ef datos.txt -cf imagen.jpg -p clave` | Oculta datos con contraseña | Esteganografía ofensiva |
 | `--extract -sf imagen.jpg -xf output.txt` | Extrae a archivo específico | Output en `output.txt` |
 
-## **Casos de uso reales:**
+## **Casos de uso reales:** Análisis forense de comunicaciones encubiertas, investigación de exfiltración de datos corporativos, detección de canales de comando y control
 ---
 
 ## g) Escalada de Privilegios (su / sudo)
@@ -129,7 +129,7 @@
 | `sudo -l` | Lista permisos sudo | `NOPASSWD: /usr/bin/ruby` |
 | `sudo /usr/bin/ruby -e 'exec "/bin/bash"'` | Shell root vía Ruby | `root@amor:~#` |
 
-## **Casos de uso reales:**
+## **Casos de uso reales:** 
 
 # :three: Realice un diagrama de flujo de todo el procedimiento realizado.
 

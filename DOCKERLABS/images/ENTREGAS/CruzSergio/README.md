@@ -3,7 +3,7 @@
 ## 1. CTF Amor 🧑‍💻
 Para el taller desarrollado se utilizo el contenedor **AMOR** de DockerLabs, el cual fue desarrollado por Romabri en el año 2024.
 
-![Amor_Docker_Labs](images/amor_docker.jpg)
+![Amor_Docker_Labs](images/amor_docker.png)
 
 A continuacion se explicara el procedimiento del CTF, con la finalidad de recopilar y explicar las diferentes herramientas utilizadas en el desarrollo del mismo.
 

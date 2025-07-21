@@ -185,6 +185,8 @@
   - `hydra -V -f ssh://IP`
 - **e) Herramienta alterna:** `medusa`, `ncrack`
 
+![GG](images/g_hydra.PNG)
+
 ---
 
 ### `ssh carlota@172.17.0.3`
@@ -198,6 +200,8 @@
   - `ssh -i key.pem user@host`
   - `ssh -v user@host` (modo verbose)
 - **e) Herramienta alterna:** `putty`, `mosh`
+
+![HH](images/h_ssh.PNG)
 
 ---
 

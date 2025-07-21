@@ -94,6 +94,89 @@ Se usa tanto para ocultar datos como para extraer información oculta durante an
 | sudo ruby -e 'exec ...'                 | Escalada de privilegios.             | Ejecuta una shell como root usando Ruby.                | sudo /bin/sh                         | sudo python -c ...         | sudo perl -e ...   |
 | whoami                                  | Mostrar usuario actual.              | Retorna el nombre del usuario actual.                   | id                                   | echo $USER                 | logname            |
 
+# COMPLEMENTO EXPLICACIÓN COMANDOS EMPLEADOS LABORATORIO "AMOR" DOCKERLABS
+
+# ip a
+Descripción:
+Muestra toda la información de red de las interfaces del sistema, incluyendo IPs, MACs y estados.
+Explicación:Es un alias de ip address show, usado para identificar la IP asignada a cada interfaz de red (como eth0, docker0, lo, etc.).
+Uso práctico:Identificar la IP propia o del contenedor para reconocimiento o configuración de red.
+# netdiscover -i docker0 -r 172.17.0.0/24
+Descripción: Descubre hosts activos en una red usando ARP.
+Explicación: -i docker0: especifica la interfaz de red (docker0, propia de contenedores Docker).
+             -r 172.17.0.0/24: define el rango de IPs a escanear (clase C).
+Uso práctico: Listar dispositivos conectados en la red interna de Docker.}
+
+# sudo nmap --min-rate 5000 -p- -sS -sV
+Descripción: Escaneo rápido de todos los puertos y servicios de una IP objetivo.
+Explicación de flags: --min-rate 5000: aumenta la velocidad del escaneo (mínimo 5000 paquetes por segundo).
+                      -p-: escanea todos los 65535 puertos.
+                      -sS: escaneo SYN (stealth scan).
+                      -sV: identifica versiones de servicios.
+Uso práctico: Encontrar servicios abiertos, como SSH, HTTP, etc., para explotación.
+
+# gobuster dir -u <URL> -w <diccionario>
+Descripción: Fuerza bruta de directorios en un servidor web.
+Explicación: -u: URL objetivo.
+            -w: archivo de diccionario con posibles nombres de directorio (por ejemplo, common.txt).
+Uso práctico: Descubrir rutas ocultas como /admin, /login, /secret.
+
+# hydra -l user -P wordlist ssh://<IP>
+Descripción: Ataque de fuerza bruta contra servicio SSH.
+Explicación: -l user: nombre de usuario fijo.
+            -P wordlist: lista de contraseñas a probar.
+            ssh://<IP>: protocolo y objetivo.
+Uso práctico: Descubrir credenciales válidas para acceso remoto.
+
+# ssh user@IP
+Descripción: Establece una sesión remota segura hacia un servidor.
+Explicación: Autenticación vía contraseña o clave pública.
+Uso práctico: Ingresar al sistema objetivo si se tiene usuario y clave válidos.
+
+# cd /ruta
+Descripción: Cambia el directorio actual de trabajo.
+Explicación: Navega entre carpetas del sistema de archivos.
+Uso práctico: Ubicarse en la ruta donde se encuentra información relevante.
+
+# scp user@host:/ruta /destino
+Descripción: Copia segura de archivos desde un host remoto hacia el local.
+Explicación: Basado en SSH, cifra el contenido durante la transferencia.
+Uso práctico: Extraer archivos sospechosos del objetivo para análisis.
+
+# file archivo
+Descripción: Identifica el tipo de archivo.
+Explicación: Analiza cabecera y contenido binario del archivo.
+Uso práctico: Determinar si un archivo es una imagen, audio, texto, ejecutable, etc. Útil para saber si se puede usar esteganografía.
+
+# steghide --extract -sf archivo
+Descripción: Extrae contenido oculto en un archivo usando esteganografía.
+Explicación: --extract: inicia la extracción.
+             -sf archivo: especifica el archivo portador.
+Uso práctico: Extraer contraseñas, banderas u otros datos escondidos en imágenes o audios.
+
+# echo
+Descripción: Imprime texto o variables en la terminal.
+Explicación: Comando básico para mostrar resultados o pasar entradas a otros comandos.
+Uso práctico: Ver contenido de variables, pruebas rápidas, o para redirigir texto.
+
+# su usuario
+Descripción: Permite cambiar de usuario en la terminal.
+Explicación: Requiere contraseña del usuario destino.
+Uso práctico: Escalar privilegios o moverse entre cuentas comprometidas.
+
+# sudo -l
+Descripción: Lista los comandos que el usuario puede ejecutar como superusuario sin contraseña.
+Uso práctico: Detectar posibles vectores de escalada de privilegios, como si puede ejecutar ruby, python, find, etc., como root.
+
+# sudo ruby -e 'exec "/bin/bash"'
+Descripción: Ejecuta una shell interactiva como root usando Ruby.
+Explicación: -e: ejecuta código Ruby inline.
+             exec "/bin/bash": lanza bash reemplazando el proceso Ruby.
+Uso práctico: Escalada de privilegios si ruby está permitido por sudo sin contraseña.
+
+# whoami
+Descripción: Muestra el usuario actual con el que se está ejecutando la terminal.
+Uso práctico: Verificar si se ha escalado privilegios (por ejemplo, si ahora eres root).
 
 3.	Realice un diagrama de flujo de todo el procedimiento realizado.
 

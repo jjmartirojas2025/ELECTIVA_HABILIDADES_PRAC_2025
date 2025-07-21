@@ -206,7 +206,9 @@ A continuación, se describen variantes técnicas de cada herramienta utilizada 
 
 ## 3. Diagrama de flujo del procedimiento
 
-imagen
+<p align="center">
+  <img src="Imagenes/Diagrama LAB.png">
+</p>
 
 ---
 

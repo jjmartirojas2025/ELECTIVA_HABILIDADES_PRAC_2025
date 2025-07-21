@@ -7,7 +7,7 @@
 
 # <p align="LEFT">DESARROLLO
 
-1.	Realizar una investigación individual de cada una de las herramientas empleadas. Sintetice el resultado mediante un cuadro que explique su definición, funcionalidad y casos de uso.
+### 1.	Realizar una investigación individual de cada una de las herramientas empleadas. Sintetice el resultado mediante un cuadro que explique su definición, funcionalidad y casos de uso.
 # <p align="LEFT">TOOLS
 ![Cyber](https://media4.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MmNhM2t4ODdvcno4amdxaHpsZ2QwNjR4MHFiOGhna2QzcWFnOXF1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oKIPqsXYcdjcBcXL2/giphy.webp)
 
@@ -65,7 +65,7 @@ Steghide es una herramienta de esteganografía que permite ocultar archivos dent
 Soporta cifrado y compresión, y requiere una frase de contraseña para incrustar o extraer la información.
 Se usa tanto para ocultar datos como para extraer información oculta durante análisis forense o desafíos CTF.
 
-2.	Explicar en detalle cada uno de los comandos empleados realizando un desglose del mismo y citando al menos tres alternativas (si aplica) de variantes del comando.
+### 2.	Explicar en detalle cada uno de los comandos empleados realizando un desglose del mismo y citando al menos tres alternativas (si aplica) de variantes del comando.
 
 ![Cyber](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjAwM3Q5MTM4NXY2MXBlZm5taWx0bjRzajNsaGVmOWE5bzgyam5zMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HscDLzkO8EOTmgkhQP/giphy.webp)
 ![Cyber](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjAwM3Q5MTM4NXY2MXBlZm5taWx0bjRzajNsaGVmOWE5bzgyam5zMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VTtANKl0beDFQRLDTh/giphy.webp)
@@ -178,7 +178,7 @@ Uso práctico: Escalada de privilegios si ruby está permitido por sudo sin cont
 Descripción: Muestra el usuario actual con el que se está ejecutando la terminal.
 Uso práctico: Verificar si se ha escalado privilegios (por ejemplo, si ahora eres root).
 
-3.	Realice un diagrama de flujo de todo el procedimiento realizado.
+### 3.	Realice un diagrama de flujo de todo el procedimiento realizado.
 
 ![Diagrama de flujo mejorado del Laboratorio _Reto Amor (DockerLabs)_](https://github.com/user-attachments/assets/c5d94833-f618-4871-99d6-461437bd7f06)
 

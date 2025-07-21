@@ -13,12 +13,28 @@ El reto CTF (Capture The Flag) de Docker Hub dirigido al usuario 'legion', es un
 :triangular_flag_on_post: Enseñar el manejo profesional de herramientas de ciberseguridad en infraestructuras modernas, empleando contenedores y automatización reproducible de laboratorios.
 
 :triangular_flag_on_post: Promover el razonamiento forense/técnico y la documentación detallada, útil en auditorías y peritajes digitales.
-                                                                                                                                                                       |
-| **Fases principales**           | 1. Despliegue y preparación del entorno.<br>2. Reconocimiento y mapeo de la red.<br>3. Enumeración de servicios y credenciales.<br>4. Explotación de accesos y privilegios.<br>5. Documentación y reporte.                                                                                                                                            |
-| **Herramientas empleadas**      | Kali Linux, Docker, netdiscover, nmap, gobuster, hydra, scp, steghide, su, sudo.                                                                                                                                                                                                                                                                         |
-| **Dinámica resumida**           | - Descargar el laboratorio y desplegarlo en Kali Linux.<br>- Descubrir la máquina objetivo y enumerar servicios.<br>- Fuzzing web y obtención de posibles usuarios.<br>- Bruteforce SSH y obtención de acceso.<br>- Extracción/análisis de archivos ocultos.<br>- Escalada de privilegios.<br>- Documentar hallazgos y pasos para informe final.             |
-| **Conceptos clave**             | Contenedores Docker, seguridad ofensiva en Linux, análisis y gestión forense digital, escalada de privilegios, administración de usuarios y generación de documentación técnico-jurídica.                                                                                                                            |
-| **Perfil de aprendizaje**       | Estudiantes, profesionales TI o abogados en derecho digital que quieran practicar manejo de evidencias digitales, ataques y defensas en entornos virtualizados, reforzar documentación y aplicación de mejores prácticas en ciberseguridad actual.                                                               |
+
+| 🛠️ **Fase**                            | 📄 **Actividades principales**                                                                                                                                                                                                                       |
+|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 🚀 **1. Despliegue y preparación**      | - Descargar el archivo/laboratorio desde el repositorio.<br>- Copiarlo a la máquina virtual con Kali Linux.<br>- Instalar Docker (si no está presente).<br>- Desplegar servicios y retos mediante scripts.<br>- Crear el contenedor en la red interna (ej. 172.17.0.0/24).                  |
+| 🌐 **2. Reconocimiento y mapeo**        | - Identificación de hosts activos con `netdiscover`.<br>- Exploración de puertos y servicios (`nmap`) en el entorno Docker (SSH, HTTP, etc.).                                                                                                       |
+| 🔎 **3. Enumeración y credenciales**    | - Fuzzing con `gobuster` para descubrir directorios/archivos.<br>- Recolección de usuarios (carlota, juan, legion).<br>- Obtención de pistas para la fase de explotación.                                                                         |
+| 💥 **4. Explotación y escalada**        | - Ataque de contraseñas sobre SSH (`hydra`) para acceso legítimo.<br>- Descarga y análisis de evidencia digital (`scp`, `steghide`).<br>- Escalada de privilegios y análisis forense (`su`, `sudo`, análisis de archivos protegidos).               |
+| 📝 **5. Documentación y reporte**       | - Registro de comandos, hallazgos y pasos del proceso.<br>- Elaboración de informe tipo README.<br>- Cumplimiento de trazabilidad, cadena de custodia y marco técnico/jurídico.                                                                    |
+
+| 🧩 **Aspectos clave**            | ✍️ **Descripción**                                                                                                                                                  |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 🐳 Docker                        | Creación y gestión de entornos aislados para pruebas y retos reproducibles.                                                                                        |
+| 🦾 Seguridad Linux/Kali          | Uso de herramientas éticas de hacking y análisis forense avanzado.                                                                                                |
+| 🔏 Forense digital               | Extracción y análisis de archivos ocultos; custodia y validez técnica/jurídica de evidencia.                                                                      |
+| 🗝️ Escalada de privilegios       | Aplicación/detección de técnicas ofensivas para mejora de políticas y seguridad en usuarios y administración de sistemas Linux.                                   |
+
+| 🎯 **Perfil/aprendizaje esperado**                   | 🎓 **Beneficios formativos**                                                                                                                              |
+|------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 👨‍💻 Estudiantes, profesionales TI, abogados TIC      | - Comprensión integral de fases de ataque-defensa en entornos Docker.<br>- Práctica en recolección de evidencia digital legalmente válida.<br>- Mejora de capacidades para documentación técnica, compliance y análisis jurídico de incidentes.<br>- Fortalecimiento de ética y conocimientos actualizados en ciberseguridad y respuesta técnica.       |
+
+
+
 
 
 ## :one: 

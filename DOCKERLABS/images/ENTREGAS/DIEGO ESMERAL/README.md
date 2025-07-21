@@ -81,6 +81,9 @@ sudo -l
 sudo /usr/bin/ruby -e 'exec "/bin/bash"'
 
 ```
+
+![Amor](AMOR.png)
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 🧠 Diagrama de flujo
@@ -103,4 +106,3 @@ Decodificar contraseña y escalar privilegios a root.
 
 ![Herramientas de Ciberseguridad y sus Aplicaciones](Images/27.png)
 
-![Amor](Images/28.png)

@@ -313,7 +313,7 @@ class AA,BB,CC,DD,EE privilegios
 class FF exito
 ```
 
-## ::mag_right: Referencias Consultadas :mag:
+## :blue_book: Referencias Consultadas :ledger:
 
 :satellite: Herramientas de Descubrimiento de Red:
 

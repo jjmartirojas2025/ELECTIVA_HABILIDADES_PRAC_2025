@@ -162,6 +162,7 @@
 | **Ruby Shell Escape** | GTFOBins technique | Ruby puede ejecutar comandos del sistema usando `exec()`, bypaseando restricciones de seguridad |
 | **NOPASSWD sudo** | Configuración insegura de sudoers | Permite ejecución sin autenticación adicional de `/usr/bin/ruby` |
 | **Exec system call** | Reemplazo completo del proceso | `exec "/bin/bash"` sustituye el proceso Ruby por un shell root |
+---
 
 ## Casos de Uso Corporativo y Defensivos
 
@@ -182,7 +183,6 @@
 | Monitoreo de escalada de privilegios | 99.2% de intentos detectados | <30 segundos | 0.8% |
 | Análisis de configuraciones sudo | 100% de archivos sudoers auditados | <5 minutos | 0.3% |
 | Detección de esteganografía | 87% de canales ocultos identificados | <10 minutos | 5.3% |
-
 ---
 
 ## Consideraciones Legales y Marco Jurídico Colombiano
@@ -195,7 +195,7 @@
 | **Ley 1273 de 2009** | Art. 269A - Acceso abusivo a sistema informático | Tipificación de accesos no autorizados; habilita pruebas lícitas en entornos controlados |
 | **Ley 1273 de 2009** | Art. 269J - Transferencia no consentida de activos | Protección del patrimonio económico contra manipulaciones informáticas |
 | **Convenio de Budapest** | Bloque de constitucionalidad | Marco internacional para cooperación en ciberseguridad legítima |
-
+---
 
 ## Recomendaciones de Buenas Prácticas
 
@@ -216,17 +216,7 @@
 | **Intérpretes de comandos** | 🔒 Restringir acceso a `/usr/bin/ruby`, `/usr/bin/python` | Vectores comunes de escape shell |
 | **Auditoría de Base64** | 📊 Implementar detección automática de contenido codificado | Identificación de canales de exfiltración |
 | **Principio de menor privilegio** | ✅ Otorgar solo permisos mínimos necesarios | Reducción de superficie de ataque |
-
-## Consideraciones Éticas y de Compliance
-
-### Principios de Ciberseguridad Ética
-
-> **⚖️ Advertencia Legal:** Las técnicas demostradas en este CTF deben emplearse **exclusivamente** en:
-> - Entornos controlados de laboratorio (DockerLabs)
-> - Sistemas propios con autorización documentada  
-> - Contextos académicos supervisados
-> 
-> El uso no autorizado en sistemas ajenos constituye **delito** según el **artículo 269A de la Ley 1273 de 2009**, con penas de 4-8 años de prisión y multas hasta 1.000 SMLMV.
+---
 
 ### Marco de Compliance Corporativo
 

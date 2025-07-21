@@ -136,3 +136,4 @@ De esta forma se cumpliria con el escalamiento de privilegios, teniendo acceso a
 
 
 ### 📑 Diagrama de Flujo desarrollo CTF
+![diagrama](images/diagrama_ataque.png)

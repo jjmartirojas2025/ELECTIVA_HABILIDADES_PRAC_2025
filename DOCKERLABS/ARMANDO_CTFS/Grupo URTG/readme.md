@@ -1,4 +1,5 @@
 # 🧪 Reto CTF Docker Hub – Usuario 'legion'
+# URIBE / REY / TORRES / GÓMEZ ORTEGA
 
 Este repositorio documenta paso a paso la resolución del reto CTF basado en un contenedor Docker que expone un servicio SSH con el usuario `legion`, cuya contraseña debe ser descubierta a partir de un acertijo.
 
@@ -12,6 +13,8 @@ docker pull jaiderospina/retoctf:1.0
 
 **Descripción:**
 Descarga una imagen pública con Ubuntu y servicio SSH habilitado, preconfigurado con un usuario `legion`.
+
+<img width="1500" height="400" alt="image" src="https://github.com/user-attachments/assets/43c48b01-01ad-4a80-abf1-864ddcf927f4" />
 
 ---
 
@@ -27,6 +30,7 @@ docker run -d -p 2222:22 --name mi-contenedor-ssh jaiderospina/retoctf:1.0
 - `--name`: nombre asignado al contenedor para fácil manejo.
 
 **Objetivo:** Tener un contenedor activo con SSH disponible para conexión desde el host.
+<img width="1500" height="400" alt="image" src="https://github.com/user-attachments/assets/82d37956-15fa-44d0-8355-ec4345fd5503" />
 
 ---
 
@@ -51,6 +55,7 @@ crunch 5 5 -t E%%%% -o lista.txt -f /usr/share/crunch/charset.lst mixalpha
 - `-f ... mixalpha`: usa todas las letras mayúsculas y minúsculas.
 
 **Objetivo:** Crear un diccionario de posibles contraseñas según pistas del acertijo del reto.
+<img width="1500" height="400" alt="image" src="https://github.com/user-attachments/assets/eb8c4421-cb32-427d-92b6-27ca5f474eee" />
 
 ---
 
@@ -71,6 +76,7 @@ Hydra identifica la contraseña correcta e imprime una línea como:
 ```
 [22][ssh] host: localhost   login: legion   password: Esdeo
 ```
+<img width="1500" height="400" alt="image" src="https://github.com/user-attachments/assets/f9a5e395-0b7f-4a26-bd33-76af4b17bc37" />
 
 ---
 
@@ -87,6 +93,7 @@ Ingresar como el usuario `legion` al contenedor una vez descubierta la contrase�
 ls
 cat flag.txt
 ```
+<img width="1500" height="400" alt="image" src="https://github.com/user-attachments/assets/3543546d-49cc-450b-a452-926a6800e0fb" />
 
 ---
 

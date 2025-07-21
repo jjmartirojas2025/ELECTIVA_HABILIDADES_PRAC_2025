@@ -1,4 +1,4 @@
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/b28f545e-7366-403e-9e06-4882728bf873" />
+<h1 align="center"><img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/b28f545e-7366-403e-9e06-4882728bf873" /></h1>
 <h1 align="center">TALLER ELECTIVA HABILIDADES PRACTICAS EN EL CIBERESPACIO</h1>
 
 # - **Rubén Dario Contreras Caballero**

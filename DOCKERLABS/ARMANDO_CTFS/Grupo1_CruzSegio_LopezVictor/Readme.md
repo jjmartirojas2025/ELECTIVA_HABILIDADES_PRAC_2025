@@ -46,13 +46,13 @@ El objetivo es:
 **Crunch** es una herramienta para generar diccionarios personalizados. En caso de requerir fuerza bruta:
 
 ```bash
-crunch 5 5 -t @@DEO -o dict2.txt
+crunch 5 5 -t @@@@@ -o dict2.txt
 ```
 
 O para un diccionario basado en las letras del acertijo:
 
 ```bash
-crunch 5 5 -o posibles.txt -f /usr/share/crunch/charset.lst alpha -t %%@@@
+crunch 5 5 sdeg -t E@@@@ -o dicc3.txt
 ```
 
 ![Crunch](Images/crunch_dic.png)
@@ -78,7 +78,7 @@ hydra -l legion -P posibles.txt ssh://localhost -s 2222
 
 ## 5. Resultado de la conexión SSH
 
-Una vez descubierta la contraseña (`debería ser: DESEO`), se puede acceder al contenedor:
+Una vez descubierta la contraseña (`debería ser: Esdeg`), se puede acceder al contenedor:
 
 ```bash
 ssh legion@localhost -p 2222

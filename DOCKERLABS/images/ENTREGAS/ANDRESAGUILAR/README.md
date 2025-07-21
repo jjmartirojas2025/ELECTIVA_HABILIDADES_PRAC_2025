@@ -189,3 +189,7 @@
 **Función:** Muestra el usuario actual del sistema (útil para confirmar escalada de privilegios).
 
 ---
+
+## 🔁 Diagrama de Flujo del Procedimiento
+
+![Diagrama de Flujo](./ENTREGAS/ApellidoNombre/flujo_dockerlabs.png)

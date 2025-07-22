@@ -182,6 +182,13 @@ Uso práctico: Verificar si se ha escalado privilegios (por ejemplo, si ahora er
 
 ![Diagrama de flujo mejorado del Laboratorio _Reto Amor (DockerLabs)_](https://github.com/user-attachments/assets/c5d94833-f618-4871-99d6-461437bd7f06)
 
+Fuentes
+https://dockerlabs.es
+https://nmap.org
+https://github.com/OJ/gobuster
+https://tools.kali.org/password-attacks/hydra
+https://linux.die.net/man/1/steghide
+https://github.com
 
 
 

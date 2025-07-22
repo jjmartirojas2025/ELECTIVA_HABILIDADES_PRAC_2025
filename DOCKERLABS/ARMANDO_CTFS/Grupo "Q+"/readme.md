@@ -2,9 +2,9 @@
 <h1 align="center"> :rotating_light::bulb: CTF Docker Hub – Usuario 'legion' :bulb::rotating_light: </h1> 
 <h1 align="center"><img width="1200" height="414" alt="image" src="https://github.com/user-attachments/assets/1ca295c0-977c-41b6-a724-16d57793c255" /></h1>
 
-# :eight_spoked_asterisk: :anchor: **Rubén Contreras Caballero**
-# :eight_spoked_asterisk: :anchor: **Johan Martínez Rojas**
-# :eight_spoked_asterisk: :tent: **Mauricio Gómez Rodríguez**
+# :eight_spoked_asterisk: **Rubén Contreras Caballero** :anchor:
+# :eight_spoked_asterisk: **Johan Martínez Rojas** :anchor:
+# :eight_spoked_asterisk: **Mauricio Gómez Rodríguez** :tent:
 
 El reto CTF (Capture The Flag) de Docker Hub dirigido al usuario 'legion', es un ejercicio práctico y gamificado orientado a la seguridad informática y a la administración de contenedores Docker usando Kali Linux como entorno de pruebas.
 

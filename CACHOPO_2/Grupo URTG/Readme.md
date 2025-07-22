@@ -1,4 +1,4 @@
-# <p align="center">Laboratorio de Ciberseguridad: Resolución de la Máquina CACHOPO 🧠</p>
+# <p align="center">Laboratorio de Ciberseguridad: Resolución de la Máquina CACHOPO</p>
 
 <p align="center">
   <img src="Imagenes/Cachopo.png">

@@ -1,5 +1,9 @@
 # <p align="center">Laboratorio de Ciberseguridad: Resolución de la Máquina CACHOPO 🧠</p>
 
+<p align="center">
+  <img src="Imagenes/Cachopo.png">
+</p>
+
 <p align="center">🖥️ **Plataforma: TheHackersLabs** 🖥️</p>
 
 ---

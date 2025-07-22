@@ -24,11 +24,17 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
 1. 🔌 **Ejecución de la máquina CACHOPO**  
    - IP asignada: `172.20.10.2`
+  
+     <img width="286" height="118" alt="image" src="https://github.com/user-attachments/assets/375f142f-2877-4000-8a95-29d98f71ecab" />
+
 
 2. ✅ **Validación de conectividad entre máquinas**
    ```bash
    ping 172.20.10.2
    ```
+   <img width="289" height="93" alt="image" src="https://github.com/user-attachments/assets/89ddba92-30be-4a43-b26b-003d7d2f8433" />
+
+   <img width="411" height="45" alt="image" src="https://github.com/user-attachments/assets/e56637a2-ba45-4699-bf46-3bd69fd0c29b" />
 
 3. 🔎 **Escaneo de puertos expuestos**
    ```bash

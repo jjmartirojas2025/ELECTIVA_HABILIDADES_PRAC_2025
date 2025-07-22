@@ -1,7 +1,7 @@
 # <p align="center">Laboratorio de Ciberseguridad: Resolución de la Máquina CACHOPO</p>
 
 <p align="center">
-  <img src="Imagenes/Cachopo.png">
+  <img src="Imagenes/Cachopo.png" width="400" height="300">
 </p>
 
 <p align="center">🖥️ **Plataforma: TheHackersLabs** 🖥️</p>
@@ -9,7 +9,7 @@
 ---
 
 <p align="center">
-  <img src="Imagenes/GRUPO URTG.png">
+  <img src="Imagenes/GRUPO URTG.png" width="600" height="500">
 </p>
 
 ---

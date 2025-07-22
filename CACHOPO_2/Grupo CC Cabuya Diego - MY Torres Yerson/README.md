@@ -171,3 +171,223 @@ http://cachopo.thl/mycachopo/
 **Resultado**: se accede correctamente al directorio y se identifica un archivo descargable.
 
 ![Acceso al directorio oculto](images/G_INGRESO_DIRECTORIO_MYCACHOPO.PNG)
+
+## 🔐 Fase 3: Recuperación de contraseñas y credenciales
+
+En esta fase se trabaja con el archivo descargado del directorio `/mycachopo/` llamado `Cocineros`, el cual contiene información ofuscada que puede ser clave para el acceso al sistema.
+
+---
+
+### 3.1 Extracción del hash desde el archivo Cocineros
+
+Antes de utilizar herramientas de crackeo, es necesario extraer el hash del archivo `Cocineros`. Se emplea un comando que permite derivar el hash de Office y guardarlo en un archivo de texto.
+
+#### Comando utilizado:
+
+```bash
+office2john.py Cocineros > hash.txt
+```
+
+#### Desglose del comando:
+
+| Componente         | Descripción                                                                 |
+|--------------------|------------------------------------------------------------------------------|
+| `office2john.py`   | Script incluido con John the Ripper para convertir documentos de Office en hashes crackeables. |
+| `Cocineros`        | Archivo sospechoso que contiene la contraseña ofuscada.                     |
+| `>`                | Redirecciona la salida al archivo indicado.                                 |
+| `hash.txt`         | Archivo de salida que contiene el hash extraído listo para ser procesado.   |
+
+✅ **Resultado**: se genera correctamente el archivo `hash.txt` con el hash compatible.
+
+---
+
+### 3.2 Crackeo de hash con John the Ripper
+
+Con el hash ya generado, se utiliza `john` con la lista `rockyou.txt` para intentar descubrir la contraseña.
+
+#### Comando utilizado:
+
+```bash
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+#### Desglose del comando:
+
+| Componente                            | Descripción                                                                 |
+|---------------------------------------|------------------------------------------------------------------------------|
+| `john`                                | Herramienta para romper hashes de contraseñas.                              |
+| `--wordlist=/usr/share/wordlists/rockyou.txt` | Especifica el diccionario de palabras a utilizar en el ataque.     |
+| `hash.txt`                            | Archivo que contiene el hash a romper.                                      |
+
+---
+
+### 3.3 Confirmación del usuario y contraseña asociado
+
+Al observar el archivo `Cocineros`, se identifica el nombre del usuario asociado y su contraseña.
+
+✅ **Resultado**: se confirma el nombre del usuario asociado `Cocineros`.
+
+✅ **Resultado**: contraseña descubierta — `horse1`.
+
+![Visualización del archivo Cocineros](images/I_COCINEROS.PNG)
+
+
+## Fase 4: Ataque de fuerza bruta SSH
+
+Una vez obtenidas las credenciales del usuario `cocineros`, se procede a descubrir si alguno de los servicios accesibles (como SSH) es vulnerable mediante un ataque de fuerza bruta con la herramienta `hydra`.
+
+---
+### 4.1 Verificación del archivo con Libre Office
+
+Se realiza la apertura del archivo `cocineros`utilizando la contraseña encontrada (`horse1`) y se encuentran tres nombre que se consideran nombres de usuario.
+
+
+### 4.2 Ataque de diccionario con Hydra
+
+Se utiliza `hydra` para probar múltiples combinaciones de contraseñas contra el servicio SSH del objetivo. Se emplea el diccionario `rockyou.txt` con cada uno de los nombres de usuario identificados en el paso anterior, y se encuentra para el usuario `carlos` su contraseña respectiva mediante fuerza.
+
+![Nombres](images/USUARIOS.PNG)
+
+#### Comando utilizado:
+
+```bash
+hydra -l carlos -P /usr/share/wordlists/rockyou.txt ssh://192.168.8.76 -t 4
+```
+
+#### Desglose del comando:
+
+| Componente                              | Descripción                                                                 |
+|-----------------------------------------|------------------------------------------------------------------------------|
+| `hydra`                                 | Herramienta para realizar ataques de fuerza bruta contra servicios.         |
+| `-l carlos`                             | Especifica el nombre del usuario objetivo (`carlos`).                       |
+| `-P /usr/share/wordlists/rockyou.txt`   | Indica el archivo que contiene la lista de contraseñas a probar.           |
+| `ssh://192.168.8.76`                    | Define el protocolo (`ssh`) y la dirección IP del objetivo.                 |
+| `-t 4`                                  | Número de tareas (hilos) paralelos para acelerar el proceso.                |
+
+✅ **Resultado**: Credenciales válidas encontradas:
+
+- **Usuario**: carlos
+- **Contraseña**: bowwow
+
+![Resultados de Hydra](images/J_HYDRA_RESULTS_PASSWORD.PNG)
+
+## Fase 5: Acceso al sistema y escalada de privilegios
+
+Con las credenciales válidas descubiertas en la fase anterior, se accede al sistema mediante SSH. Posteriormente, se realiza un análisis de privilegios y se identifica una vía para obtener acceso como usuario root.
+
+---
+
+### 5.1 Acceso al sistema vía SSH
+
+Se establece una conexión remota al sistema utilizando el usuario `carlos` y la contraseña `bowwow`, previamente descubiertos.
+
+#### Comando utilizado:
+
+```bash
+ssh carlos@192.168.8.76
+```
+
+#### Desglose del comando:
+
+| Componente            | Descripción                                                       |
+|-----------------------|--------------------------------------------------------------------|
+| `ssh`                 | Herramienta para conexión remota segura mediante el protocolo SSH. |
+| `carlos@192.168.8.76` | Formato usuario@IP para conectar al host remoto.                   |
+
+✅ **Resultado**: Acceso exitoso como el usuario `carlos`.
+
+![Acceso SSH](images/M_SSH.PNG)
+
+---
+
+### 5.2 Verificación de privilegios con `sudo -l`
+
+Se consulta si el usuario actual (`carlos`) tiene permisos para ejecutar comandos como superusuario sin contraseña.
+
+#### Comando utilizado:
+
+```bash
+sudo -l
+```
+
+#### Desglose del comando:
+
+| Componente  | Descripción                                                             |
+|-------------|--------------------------------------------------------------------------|
+| `sudo`      | Permite ejecutar comandos con privilegios de superusuario.              |
+| `-l`        | Lista los comandos que el usuario actual puede ejecutar con `sudo`.     |
+
+✅ **Resultado**: Se detecta que `carlos` puede ejecutar `/usr/bin/crash` como root sin necesidad de contraseña.
+
+![Verificación de sudo](images/N_SUDO-L.PNG)
+
+---
+
+### 5.3 Exploración del binario crash
+
+Se revisa el comportamiento del binario `crash`, el cual permite abrir una shell si se usa de forma interactiva. Al no recibir parámetros, acepta comandos internos usando `!`.
+
+#### Comando utilizado:
+
+```bash
+sudo crash -h
+```
+
+✅ **Resultado**: Al ejecutar se edita el archivo, incluyendole `!sh`, de esta manera, desde dentro del programa se obtiene una shell como usuario root.
+
+![Exploración del binario crash](images/O_SUDO_CRASH.PNG)
+
+---
+
+### 5.4 Confirmación de privilegios root
+
+Una vez dentro de la shell obtenida, se verifica el usuario efectivo del sistema con el comando `whoami`.
+
+#### Comando utilizado:
+
+```bash
+whoami
+```
+
+✅ **Resultado**: `root`, confirmando el acceso completo al sistema.
+
+![Shell root obtenida](images/P_ROOT.PNG)
+
+## Conclusión
+
+La resolución de la máquina **CACHOPO** demostró un flujo de explotación encadenado que incluyó reconocimiento activo, análisis de archivos con esteganografía, crackeo de contraseñas, fuerza bruta sobre servicios y escalada de privilegios mediante binarios con permisos `NOPASSWD`.
+
+Este tipo de máquina es ideal para reforzar habilidades en:
+
+- Reconocimiento y enumeración.
+- Esteganografía y recuperación de datos ocultos.
+- Análisis de contraseñas (Office + John).
+- Ataques de fuerza bruta (Hydra).
+- Identificación y explotación de binarios con permisos elevados.
+
+---
+
+## Resumen de credenciales obtenidas
+
+| Servicio | Usuario    | Contraseña |
+|----------|------------|------------|
+| SSH      | carlos     | bowwow     |
+| Archivo Office | cocineros | horse1     |
+| Steganografía | -          | doggies    |
+
+---
+
+## Herramientas utilizadas
+
+| Herramienta      | Propósito                                                  |
+|------------------|------------------------------------------------------------|
+| `ping`           | Verificar conectividad con la máquina objetivo.           |
+| `nmap`           | Escaneo de puertos y detección de servicios.              |
+| `stegcracker`    | Ataque de diccionario sobre archivos con esteganografía. |
+| `steghide`       | Extracción de información oculta en imágenes.             |
+| `office2john.py` | Conversión de documentos Office a hash para John.         |
+| `john`           | Crackeo de hashes con diccionario.                        |
+| `hydra`          | Ataques de fuerza bruta sobre servicios SSH.              |
+| `ssh`            | Acceso remoto al sistema.                                 |
+| `sudo -l`        | Revisión de permisos sudo del usuario.                    |
+| `crash`          | Binario con permisos root explotado para obtener shell.   |

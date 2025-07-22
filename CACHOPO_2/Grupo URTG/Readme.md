@@ -49,21 +49,27 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 ## 🌐 Enumeración del Servicio Web
 
 1. 🔍 **Acceso al sitio desde el navegador**
+
+    <img width="442" height="342" alt="image" src="https://github.com/user-attachments/assets/08ce8188-16a8-4c48-aa0e-0cfef16c182c" />
+
 2. 🗂️ **Exploración de directorios ocultos con Gobuster**
    ```bash
    gobuster dir -u http://172.20.10.2 -w /usr/share/wordlists/dirbuster/...
    ```
+
+   <img width="442" height="224" alt="image" src="https://github.com/user-attachments/assets/02f75658-fac2-4c54-aef9-12443746e5be" />
+
    > Primer escaneo devuelve códigos 301 (redirección), por lo que se ajusta el comando.
 
-3. 🔐 **Segunda ejecución detecta códigos 403 (acceso denegado)**:
+4. 🔐 **Segunda ejecución detecta códigos 403 (acceso denegado)**:
    - `.htaccess`, `.htpasswd`, `/server-status`
 
-4. 🛡️ **Escaneo con Nikto revela dominio virtual:**
+5. 🛡️ **Escaneo con Nikto revela dominio virtual:**
    ```
    http://cachopo.thl
    ```
 
-5. 🛠️ **Solución: añadir dominio al archivo de hosts**
+6. 🛠️ **Solución: añadir dominio al archivo de hosts**
    ```bash
    echo "172.20.10.2 cachopo.thl" >> /etc/hosts
    ```

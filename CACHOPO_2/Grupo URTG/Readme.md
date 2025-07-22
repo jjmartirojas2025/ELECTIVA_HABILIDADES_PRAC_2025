@@ -40,6 +40,8 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
    ```bash
    sudo nmap 172.20.10.2
    ```
+   <img width="319" height="109" alt="image" src="https://github.com/user-attachments/assets/fb23146a-a650-4e2b-8456-199d85c65ad9" />
+
    > Se detectan puertos abiertos: `22 (SSH)` y `80 (HTTP)`
 
 ---

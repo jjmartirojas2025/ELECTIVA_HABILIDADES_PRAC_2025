@@ -241,12 +241,11 @@ Una vez obtenidas las credenciales del usuario `cocineros`, se procede a descubr
 
 Se realiza la apertura del archivo `cocineros`utilizando la contraseña encontrada (`horse1`) y se encuentran tres nombre que se consideran nombres de usuario.
 
+![Nombres](images/USUARIOS.PNG)
 
 ### 4.2 Ataque de diccionario con Hydra
 
 Se utiliza `hydra` para probar múltiples combinaciones de contraseñas contra el servicio SSH del objetivo. Se emplea el diccionario `rockyou.txt` con cada uno de los nombres de usuario identificados en el paso anterior, y se encuentra para el usuario `carlos` su contraseña respectiva mediante fuerza.
-
-![Nombres](images/USUARIOS.PNG)
 
 #### Comando utilizado:
 

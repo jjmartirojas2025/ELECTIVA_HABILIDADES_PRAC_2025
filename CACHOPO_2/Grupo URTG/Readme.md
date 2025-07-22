@@ -1,11 +1,16 @@
+# <p align="center">Laboratorio de Ciberseguridad: Resolución de la Máquina CACHOPO 🧠</p>
 
-# 🧠 Laboratorio de Ciberseguridad: Resolución de la Máquina CACHOPO
- 
-🖥️ **Plataforma: TheHackersLabs**
+<p align="center">🖥️ **Plataforma: TheHackersLabs** 🖥️</p>
 
 ---
 
-## 🔍 Objetivo del Laboratorio
+<p align="center">
+  <img src="Imagenes/GRUPO URTG.png">
+</p>
+
+---
+
+## <p align="center">Objetivo del Laboratorio</p>
 
 El propósito de este ejercicio es simular un entorno de intrusión controlada mediante técnicas ofensivas: reconocimiento activo, enumeración de servicios, análisis de archivos y escalada de privilegios. Trabajaremos con la máquina **CACHOPO**, la cual representa un entorno vulnerable realista dentro de una red aislada.
 

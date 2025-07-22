@@ -189,6 +189,13 @@ https://github.com/OJ/gobuster
 https://tools.kali.org/password-attacks/hydra
 https://linux.die.net/man/1/steghide
 https://github.com
-
+Docker Docs: https://docs.docker.com/
+Hydra: https://tools.kali.org/password-attacks/hydra
+Nmap Reference: https://nmap.org/book/man-briefoptions.html
+Steghide: http://steghide.sourceforge.net/
+Netdiscover: https://github.com/alexxy/netdiscover
+Gobuster: https://github.com/OJ/gobuster
+scp man: https://man7.org/linux/man-pages/man1/scp.1.html
+Ruby exec usage: https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-exec
 
 

@@ -254,7 +254,7 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
    <img width="493" height="171" alt="image" src="https://github.com/user-attachments/assets/541e18bc-b748-4da7-a2f0-7bd50079b65c" />
 
-5. 🔐 **Ataque de contraseña con John the Ripper**
+4. 🔐 **Ataque de contraseña con John the Ripper**
 
    Se usa:
 
@@ -269,7 +269,13 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
    > Contraseña: `horse1`
 
-7. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
+5. 🧑‍💻 **Contenido recuperado**:
+
+   Se vuelve a correr su apertura en libreoffice para lograr acceder a este.
+
+   <img width="424" height="258" alt="image" src="https://github.com/user-attachments/assets/3d5dde32-e2a7-4aa7-bece-9a69440fdf0b" />
+
+   Se encuentran 3 usuarios posibles → `Sofia`, `Carlos`, `Luis`
 
 ---
 

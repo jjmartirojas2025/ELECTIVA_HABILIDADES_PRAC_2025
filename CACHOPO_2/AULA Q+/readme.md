@@ -13,14 +13,14 @@ El objetivo del ejercicio es comprometer completamente la máquina, obteniendo a
 ## :two: Enumeración y Detección de Servicios
 La fase de enumeración permite identificar los servicios y puertos abiertos en la máquina objetivo. Para ello, se utilizó la herramienta nmap, ejecutando un escaneo completo sobre todos los puertos TCP.
 
-<h1 align="center">| Comando ejecutado:            | `nmap -p- -sS -sC -sV -T4 -Pn 10.0.2.30`                                 |
+| Comando ejecutado:            | `nmap -p- -sS -sC -sV -T4 -Pn 10.0.2.30`                                 |
 |-------------------------------|---------------------------------------------------------------------------|
 | Parámetros explicados:        |  **-p-**: escanea los 65,535 puertos                                     |
 |                               |  **-sS**: escaneo SYN (rápido y sigiloso)                                |
 |                               |  **-sC**: ejecuta scripts NSE por defecto                                |
 |                               |  **-sV**: detecta versiones de servicios                                 |
 |                               |  **-T4**: velocidad agresiva                                             |
-|                               |  **-Pn**: omite detección de host                                        |</h1> 
+|                               |  **-Pn**: omite detección de host                                        |
 
 Se detecta un servidor web en el puerto 80 y un servicio SSH en el puerto 22. El análisis se centra inicialmente en el servicio web, por ser un punto frecuente de entrada en pruebas de penetración
-<img width="889" height="197" alt="image" src="https://github.com/user-attachments/assets/063eba77-35cb-4529-9a7a-c95b1b67bf65" />
+<h1 align="center"><img width="889" height="197" alt="image" src="https://github.com/user-attachments/assets/063eba77-35cb-4529-9a7a-c95b1b67bf65" /></h1> 

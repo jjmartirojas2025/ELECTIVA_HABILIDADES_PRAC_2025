@@ -255,13 +255,21 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
    <img width="493" height="171" alt="image" src="https://github.com/user-attachments/assets/541e18bc-b748-4da7-a2f0-7bd50079b65c" />
 
 5. 🔐 **Ataque de contraseña con John the Ripper**
+
+   Se usa:
+
    ```bash
    python3 /usr/share/john/office2john.py cocineros.doc > hash.txt
    john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
    ```
+
+   para romper la contraseña y obtengo lo siguiente:
+
+   <img width="449" height="220" alt="image" src="https://github.com/user-attachments/assets/2f1b29f3-ef6a-41ee-9521-1978aadd2a50" />
+
    > Contraseña: `horse1`
 
-6. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
+7. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
 
 ---
 

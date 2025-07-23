@@ -156,15 +156,32 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
       Teniendo en cuenta que no se puede con steghide, se instala **stegcracker** para hacerlo por otro medio.
 
 5. 🔓 **Ataque por diccionario con stegcracker**
+
+      <img width="442" height="233" alt="image" src="https://github.com/user-attachments/assets/1dbc468f-6d9e-469a-a43e-69ef67aef682" />
+
    ```bash
    stegcracker cachopo.jpg /usr/share/wordlists/rockyou.txt
    ```
+
+   Como resultado al correr el comando se obtiene que:
+   
+   <img width="391" height="184" alt="image" src="https://github.com/user-attachments/assets/033367b9-b74b-44cb-8e75-2aab2f8ab2ab" />
+
    > Contraseña encontrada: `doggies`
 
-6. 📂 **Extracción del archivo oculto**
+7. 📂 **Extracción del archivo oculto**
+
+    Se emplea de nuevo steghide y se utiliza la passphrase encontrada:
+
+   <img width="235" height="61" alt="image" src="https://github.com/user-attachments/assets/04ce0440-7bcf-4ed1-ae61-1cdb97191de5" />
+
    ```bash
    steghide extract -sf cachopo.jpg -p doggies
    ```
+
+    Se lee el contenido del archivo.
+
+    <img width="199" height="45" alt="image" src="https://github.com/user-attachments/assets/f65f1c73-b097-4ee9-88e4-bb1d4d2f5c3a" />
 
 ---
 

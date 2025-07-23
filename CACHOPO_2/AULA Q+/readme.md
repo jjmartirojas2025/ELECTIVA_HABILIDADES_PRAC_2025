@@ -28,7 +28,7 @@ La fase inicial se enfocó en descubrir los servicios expuestos en la máquina o
 
 | Resultado destacado                                                                                                                                                                                                 |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Nmap scan report for 10.0.2.30**<br>Host is up (0.0020s latency).<br><br>Not shown: 65,533 closed ports<br><br>                 <br>22/tcp      | open    | ssh             | OpenSSH 8.9p1 Debian            <br>80/tcp      | open    | http            | Apache httpd 2.4.54 ((Debian)) |
+| **Nmap scan report for 10.0.2.30**<br>Host is up (0.0020s latency).<br><br>Not shown: 65,533 closed ports<br><br> |
 
 | Puerto  | Estado | Servicio | Versión                        |
 |---------|--------|----------|--------------------------------|

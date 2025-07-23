@@ -207,7 +207,7 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
      <img width="442" height="128" alt="image" src="https://github.com/user-attachments/assets/5a842ba2-b8d0-4a18-977c-93e390e20c5b" />
 
-3. 🔍 **Análisis del archivo**
+2. 🔍 **Análisis del archivo**
 
      Se revisa el contenido con el comando:
 
@@ -231,23 +231,37 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
     Esto significa que:
    
-    cocineros.txt es en realidad un archivo ofimático antiguo en formato OLE (Composite Document File V2), ¡y está cifrado!
+    cocineros.txt es en realidad un archivo ofimático antiguo en formato OLE (Composite Document File V2), **¡y está cifrado!**
     Es común en archivos .doc (Word 97-2003), .xls, .ppt y puede requerir una contraseña para abrirse.
 
-5. 📝 **Renombrar para apertura como documento**
+3. 📝 **Renombrar para apertura como documento**
+
+   Se renombra el archivo para que tenga una extensión .doc
+
    ```bash
    mv cocineros.txt cocineros.doc
-   libreoffice cocineros.doc
    ```
 
-6. 🔐 **Ataque de contraseña con John the Ripper**
+   <img width="200" height="31" alt="image" src="https://github.com/user-attachments/assets/0ce031bf-4382-4ea5-a6c2-ccd61e165b3a" />
+
+   Para abrir el archivo cocineros.txt, primero se utiliza el siguiente comando:
+
+   ```bash
+   cat cocineros.txt
+   ```
+   
+   Posteriormente se abre con libreoffice y sale el siguiente letrero solicitándo contraseña:
+
+   <img width="493" height="171" alt="image" src="https://github.com/user-attachments/assets/541e18bc-b748-4da7-a2f0-7bd50079b65c" />
+
+5. 🔐 **Ataque de contraseña con John the Ripper**
    ```bash
    python3 /usr/share/john/office2john.py cocineros.doc > hash.txt
    john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
    ```
    > Contraseña: `horse1`
 
-7. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
+6. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
 
 ---
 

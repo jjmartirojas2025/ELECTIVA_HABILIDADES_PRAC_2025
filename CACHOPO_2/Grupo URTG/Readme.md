@@ -360,6 +360,8 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
    
    <img width="442" height="266" alt="image" src="https://github.com/user-attachments/assets/48583e2d-7d64-4769-b226-5e31eafe8497" />
 
+   <img width="368" height="369" alt="image" src="https://github.com/user-attachments/assets/37f6d14d-7b5a-4370-9118-df17491b9068" />
+
    Aunque el binario crash en sí no lanza una shell directamente, ¡ya se esta ejecutando un binario como root sin pedir contraseña! **Esto   es una vulnerabilidad potencial**.
    Si puedes abusar del binario para ejecutar comandos arbitrarios, puedes escalar privilegios.
 
@@ -367,11 +369,29 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
    <img width="259" height="33" alt="image" src="https://github.com/user-attachments/assets/1e07eb33-85e6-4545-bcc7-18c346df087b" />
 
-3. ✅ **Confirmación de acceso root**
+4. ✅ **Confirmación de acceso root**
+
+Se logra acceder al root escalando privilegios
+
+   <img width="312" height="47" alt="image" src="https://github.com/user-attachments/assets/9f49980e-a1d2-45cf-8ada-703a95db2405" />
+
+   <img width="601" height="39" alt="image" src="https://github.com/user-attachments/assets/b8cb2bc9-ec6a-4075-902e-adfc09bee949" />
+
    ```bash
    whoami
    # root
    ```
+
+   Se finaliza el ejercicio verificando el acceso, directamente en la máquina de cachopo obteniendo lo siguiente:
+
+   <img width="442" height="249" alt="image" src="https://github.com/user-attachments/assets/de1ce7c8-2a95-4e67-b055-a173483b12f3" />
+
+   Se realiza de nuevo el proceso de verificación de acceso por root y el proceso de escalación de privilegios así:
+
+   <img width="442" height="304" alt="image" src="https://github.com/user-attachments/assets/5ce38e5b-343c-4199-87d8-4355eba02aee" />
+
+
+**Se finaliza la resolución de la máquina de Cachopo sin novedad.**
 
 ---
 

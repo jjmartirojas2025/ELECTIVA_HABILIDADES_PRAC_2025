@@ -188,26 +188,45 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 ## 📁 Descubrimiento de Archivo Protegido
 
 1. 🌐 **Acceso a `/mycachopo` → archivo `cocineros.txt`**
-2. 🔍 **Análisis del archivo**
+
+     Siguiente paso es entrar al directorio oculto en el servidor web, ubicado en:
+
+     `http://cachopo.thl/mycachopo`
+
+     Se abre en el navegador y se obtiene que: 
+
+     <img width="442" height="158" alt="image" src="https://github.com/user-attachments/assets/ede4316d-e005-4e9b-8311-2a5656adcd2d" />
+
+     Se obtiene que hay un **listado de directorio habilitado** (Index of /mycachopo), el cual contiene un archivo llamado cocineros.
+
+     Se da clic en cocineros y se descarga la imagen
+
+     <img width="442" height="149" alt="image" src="https://github.com/user-attachments/assets/4deefd50-c41c-4f80-ad5c-cab3c8178ebb" />
+
+     Se descarga el archivo por medio del uso de la terminal para guardarlo directamente:
+
+     <img width="442" height="128" alt="image" src="https://github.com/user-attachments/assets/5a842ba2-b8d0-4a18-977c-93e390e20c5b" />
+
+3. 🔍 **Análisis del archivo**
    ```bash
    file cocineros.txt
    ```
    > Resultado: Formato cifrado CDFV2
 
-3. 📝 **Renombrar para apertura como documento**
+4. 📝 **Renombrar para apertura como documento**
    ```bash
    mv cocineros.txt cocineros.doc
    libreoffice cocineros.doc
    ```
 
-4. 🔐 **Ataque de contraseña con John the Ripper**
+5. 🔐 **Ataque de contraseña con John the Ripper**
    ```bash
    python3 /usr/share/john/office2john.py cocineros.doc > hash.txt
    john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
    ```
    > Contraseña: `horse1`
 
-5. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
+6. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
 
 ---
 

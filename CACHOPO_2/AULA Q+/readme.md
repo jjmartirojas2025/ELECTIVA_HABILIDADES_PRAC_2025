@@ -23,9 +23,10 @@ La fase de enumeración permite identificar los servicios y puertos abiertos en 
 |                               |  **-Pn**: omite detección de host                                        |
 
 Se detecta un servidor web en el puerto 80 y un servicio SSH en el puerto 22. El análisis se centra inicialmente en el servicio web, por ser un punto frecuente de entrada en pruebas de penetración
-<h1 align="center"><img width="889" height="197" alt="image" src="https://github.com/user-attachments/assets/063eba77-35cb-4529-9a7a-c95b1b67bf65" /></h1> 
-La fase inicial se enfocó en descubrir los servicios expuestos en la máquina objetivo 10.0.2.30. Para ello, se utilizó nmap, realizando un escaneo intensivo de todos los puertos TCP y aplicando scripts de detección automática.
 
+<h1 align="center"><img width="889" height="197" alt="image" src="https://github.com/user-attachments/assets/063eba77-35cb-4529-9a7a-c95b1b67bf65" /></h1> 
+
+La fase inicial se enfocó en descubrir los servicios expuestos en la máquina objetivo 10.0.2.30. Para ello, se utilizó nmap, realizando un escaneo intensivo de todos los puertos TCP y aplicando scripts de detección automática.
 
 :eight_spoked_asterisk: **Resultado destacado:**
 
@@ -37,4 +38,9 @@ La fase inicial se enfocó en descubrir los servicios expuestos en la máquina o
 |---------|--------|----------|--------------------------------|
 | 22/tcp  | open   | ssh      | OpenSSH 8.9p1 Debian           |
 | 80/tcp  | open   | http     | Apache httpd 2.4.54 ((Debian)) |
+
+**Puerto 22/tcp:** Servicio SSH activo (OpenSSH 8.9p1)
+**Puerto 80/tcp:** Servidor HTTP Apache activo. Se observará más a fondo en la siguiente fase.
+
+Este escaneo inicial permite enfocar el análisis en el servicio web, donde se encuentra una posible vía de explotación
 

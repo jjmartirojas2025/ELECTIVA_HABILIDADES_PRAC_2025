@@ -45,3 +45,22 @@ La fase inicial se enfocó en descubrir los servicios expuestos en la máquina o
 
 Este escaneo inicial permite enfocar el análisis en el servicio web, donde se encuentra una posible vía de explotación
 
+
+## :three: Análisis del Servicio Web (WordPress)
+
+- Al acceder desde un navegador a http://10.0.2.30, el servidor redirige a un nombre de dominio interno: http://cachopo.local. Para resolver esta dirección correctamente, fue necesario editar el archivo /etc/hosts en la máquina atacante:
+
+- echo "10.0.2.30 cachopo.local" >> /etc/hosts
+
+Una vez hecho esto, se accede al sitio web, el cual está construido sobre WordPress. Para analizar su configuración y detectar vulnerabilidades, se utiliza la herramienta wpscan.
+
+| Comando ejecutado:                       | `wpscan --url http://cachopo.local --enumerate u,vp,vt`     |
+|------------------------------------------|--------------------------------------------------------------|
+| Resultados destacados:                   | Usuario identificado: admin                                  |
+|                                          | Plugin vulnerable detectado: simple-events                   |
+|                                          | Tipo de vulnerabilidad: **Inyección SQL (SQLi)**             |
+
+El plugin simple-events presenta una vulnerabilidad que permite manipular las consultas SQL a través de parámetros GET sin la debida sanitización, lo cual representa una grave brecha de seguridad. Esto indica una vía clara de explotación para acceder a información sensible de la base de datos, como usuarios y contraseñas, lo cual será abordado en la siguiente fase.
+
+<h1 align="center"><img width="881" height="228" alt="image" src="https://github.com/user-attachments/assets/bdda20ed-314e-4cc6-a5d6-4a5ce403bf98" /></h1> 
+

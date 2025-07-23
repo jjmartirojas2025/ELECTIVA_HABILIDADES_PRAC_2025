@@ -1,11 +1,9 @@
-# Creando CTF's
-
 # 🛡️ Reto CTF: Ubuntu con SSH y Usuario 'Legion'
 
 ## 🎯 Objetivo
 Acceder vía SSH a un contenedor Docker con usuario `legion`, cuya contraseña debe ser descubierta a través de fuerza bruta basada en un acertijo. Se utilizaron herramientas como `crunch` e `hydra` para automatizar el proceso.
 
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 🧱 1. Preparación del entorno
 
@@ -21,15 +19,22 @@ Solución a conflicto de nombre
 
 
 docker rm -f mi-contenedor-ssh
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🔍 2. Verificación del contenedor
 
 
 docker ps
 Confirmó contenedor activo y SSH escuchando en puerto 2222.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🧠 3. Análisis del acertijo
 Cinco letras ocultas en las palabras estrella, selva, dedo, gato...
 Hipótesis principal: combinación tipo esdeg, ESDEG, etc.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🧰 4. Generación de diccionarios con Crunch
 Lista basada en patrón:
@@ -48,6 +53,9 @@ Lista completa (opcional):
 
 
 crunch 5 5 abcdefghijklmnopqrstuvwxyz -o full.lst
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ⚔️ 5. Ataques con Hydra
 Comando base usado:
 
@@ -62,11 +70,15 @@ reducido.lst ❌
 
 ampliada.lst ❌
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 👣 6. Verificación manual de servicio SSH
 
 
 ssh legion@localhost -p 2222
 Confirmado: SSH activo y pidiendo contraseña.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🎯 7. Ataque exitoso con combinaciones personalizadas
 Crear wordlist:
@@ -84,6 +96,9 @@ css
 
 
 [22][ssh] host: localhost login: legion password: Esdeg
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🔐 8. Acceso SSH exitoso
 
 
@@ -98,6 +113,7 @@ cat flag.txt
 find / -name "*flag*" 2>/dev/null
 cat /etc/motd
 grep -r "CTF{" /home 2>/dev/null
+
 ❌ No se encontró bandera explícita en el contenedor.
 
 🧠 Lecciones aprendidas

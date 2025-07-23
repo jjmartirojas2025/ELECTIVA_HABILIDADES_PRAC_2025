@@ -395,7 +395,7 @@ Se logra acceder al root escalando privilegios
 
 ---
 
-## 🧾 Conclusiones
+## <p align="center">🧾 Conclusiones 🧾</p>
 
 - ✅ La máquina **CACHOPO** permitió aplicar múltiples técnicas de pentesting en un solo flujo.
 - 🔧 Se demostró cómo un binario con permisos mal gestionados puede convertirse en un vector de escalada.
@@ -403,7 +403,7 @@ Se logra acceder al root escalando privilegios
 
 ---
 
-## 📚 Referencias
+## <p align="center">📚 Referencias 📚</p>
 
 - https://curiosidadesdehackers.com/resolucion-de-la-maquina-cachopo/
 - https://medium.com/@D4nYeD/plataforma-thehackerslabs-ctf-write-up-cachopo-f84b11198dd0

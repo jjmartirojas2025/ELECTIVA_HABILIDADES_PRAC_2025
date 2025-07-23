@@ -108,8 +108,6 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
    <img width="442" height="368" alt="image" src="https://github.com/user-attachments/assets/2911bb27-622e-4b85-b50a-3c175f35254c" />
 
-
-
 ---
 
 ## 🖼️ Análisis de Imagen y Esteganografía
@@ -125,15 +123,37 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
       <img width="442" height="114" alt="image" src="https://github.com/user-attachments/assets/3f75dc22-1dfb-4f5f-b354-e96e5cea2b28" />
 
-3. 🔍 **Verificación de metadatos**
+2. 🔍 **Verificación de metadatos**
+
+      <img width="313" height="259" alt="image" src="https://github.com/user-attachments/assets/66d7a4bd-d5f2-447f-9183-db964e519650" />
+
+
    ```bash
    exiftool cachopo.jpg
    ```
 
-4. 🔐 **Intento de extracción con steghide**
+      No se observan comentarios, autores, descripciones ni pistas visibles en los metadatos de la imagen. Esto es común cuando la información 
+      está oculta por esteganografía más elaborada.
+
+
+3. 🔐 **Intento de extracción con steghide**
+
+      Se descarga la imagen:
+
+   <img width="560" height="163" alt="image" src="https://github.com/user-attachments/assets/98f9b127-b7a0-43ef-ace1-a444644c30f7" />
+
+      Se verifica con steghide:
+
+   <img width="372" height="81" alt="image" src="https://github.com/user-attachments/assets/5cadc080-28e1-4a9a-817c-4e04f99371eb" />
+
+
    ```bash
    steghide extract -sf cachopo.jpg
    ```
+
+      Se emplea steghide pero pide passphrase.
+   
+      Teniendo en cuenta que no se puede con steghide, se instala **stegcracker** para hacerlo por otro medio.
 
 5. 🔓 **Ataque por diccionario con stegcracker**
    ```bash

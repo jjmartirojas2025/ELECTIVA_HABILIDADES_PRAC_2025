@@ -332,16 +332,40 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 ## 🔝 Escalada de Privilegios
 
 1. 🔍 **Verificación de permisos sudo**
+
+    Se comienza a escalar privilegios
+
+    <img width="398" height="49" alt="image" src="https://github.com/user-attachments/assets/730d0b7b-d2b5-447c-ac7b-93e015ca12a0" />
+
+    Se utiliza el siguiente comando:
+   
    ```bash
    sudo -l
    ```
+
+   <img width="442" height="44" alt="image" src="https://github.com/user-attachments/assets/14941a99-e747-4ee8-90aa-addd085e4421" />
+
+
    > El usuario puede ejecutar `/usr/bin/crash` como root sin contraseña
 
 2. 🚨 **Explotación del binario crash**
+
+   Se verifica si se puede invocar una shell desde crash
+
    ```bash
    sudo /usr/bin/crash
    !sh
+   !bash
    ```
+   
+   <img width="442" height="266" alt="image" src="https://github.com/user-attachments/assets/48583e2d-7d64-4769-b226-5e31eafe8497" />
+
+   Aunque el binario crash en sí no lanza una shell directamente, ¡ya se esta ejecutando un binario como root sin pedir contraseña! **Esto   es una vulnerabilidad potencial**.
+   Si puedes abusar del binario para ejecutar comandos arbitrarios, puedes escalar privilegios.
+
+   Vamos a revisar si al usar sudo /usr/bin/crash -h es vulnerable a ejecución de comandos o puedo acceder al root.
+
+   <img width="259" height="33" alt="image" src="https://github.com/user-attachments/assets/1e07eb33-85e6-4545-bcc7-18c346df087b" />
 
 3. ✅ **Confirmación de acceso root**
    ```bash

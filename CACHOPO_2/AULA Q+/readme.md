@@ -27,6 +27,7 @@ Se detecta un servidor web en el puerto 80 y un servicio SSH en el puerto 22. El
 La fase inicial se enfocó en descubrir los servicios expuestos en la máquina objetivo 10.0.2.30. Para ello, se utilizó nmap, realizando un escaneo intensivo de todos los puertos TCP y aplicando scripts de detección automática.
 
 :eight_spoked_asterisk: **Resultado destacado:**
+
 - Nmap scan report for 10.0.2.30
 - Host is up (0.0020s latency).
 - Not shown: 65533 closed ports

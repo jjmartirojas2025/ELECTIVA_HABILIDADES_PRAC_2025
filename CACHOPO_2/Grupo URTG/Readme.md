@@ -60,16 +60,27 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
    <img width="442" height="224" alt="image" src="https://github.com/user-attachments/assets/02f75658-fac2-4c54-aef9-12443746e5be" />
 
    > Primer escaneo devuelve códigos 301 (redirección), por lo que se ajusta el comando.
+   
+   El servidor redirige automáticamente cuando no encuentra una URL, pero en lugar de dar un 404, devuelve un 301 (Moved Permanently).
+   Por eso gobuster lo interpreta como si todos los intentos fueran válidos, lo cual rompe la enumeración.
 
 4. 🔐 **Segunda ejecución detecta códigos 403 (acceso denegado)**:
+
+   Se corre de nuevo el comando así:
+   
+   <img width="442" height="408" alt="image" src="https://github.com/user-attachments/assets/6fed5c61-ebe3-4f8e-b216-a9f3e9ea769a" />
+
+   Los códigos de estado 403 Forbidden indican que la ruta existe, pero tu cliente no tiene permiso para acceder directamente. Esto es una     señal valiosa: hay contenido protegido que podría explotarse por otros medios.
+   En tu gobuster aparecieron rutas como:
+
    - `.htaccess`, `.htpasswd`, `/server-status`
 
-5. 🛡️ **Escaneo con Nikto revela dominio virtual:**
+4. 🛡️ **Escaneo con Nikto revela dominio virtual:**
    ```
    http://cachopo.thl
    ```
 
-6. 🛠️ **Solución: añadir dominio al archivo de hosts**
+5. 🛠️ **Solución: añadir dominio al archivo de hosts**
    ```bash
    echo "172.20.10.2 cachopo.thl" >> /etc/hosts
    ```

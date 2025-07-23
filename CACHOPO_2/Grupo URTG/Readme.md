@@ -297,7 +297,7 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
    <img width="777" height="144" alt="image" src="https://github.com/user-attachments/assets/830a6d75-b910-423a-8236-29f585156cd3" />
 
-3. 🔓 **Ejecutar hydra**
+2. 🔓 **Ejecutar hydra**
 
    Se usa hydra para ataque por diccionario:
 
@@ -313,10 +313,19 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
 
    > Acceso válido: `carlos : [contraseña descubierta]`
 
-5. 🖥️ **Ingreso al sistema**
+3. 🖥️ **Ingreso al sistema**
+
+   Se intenta ingresar por **SSH** al sistema objetivo como el usuario carlos, con el siguiente comando:
+
    ```bash
    ssh carlos@172.20.10.2
    ```
+
+   <img width="442" height="203" alt="image" src="https://github.com/user-attachments/assets/e6fb94bb-bdd3-4997-a498-854dd312f926" />
+
+   Se conecta a la máquina 172.20.10.2, ingresando la clave del servidor dada por HYDRA y accediendo sin novedad.
+   
+   **Ahora se tiene acceso de shell remoto sobre la máquina Cachopo**.
 
 ---
 

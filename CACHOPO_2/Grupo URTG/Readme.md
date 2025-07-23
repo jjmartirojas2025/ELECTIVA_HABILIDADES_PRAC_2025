@@ -70,10 +70,15 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
    
    <img width="442" height="408" alt="image" src="https://github.com/user-attachments/assets/6fed5c61-ebe3-4f8e-b216-a9f3e9ea769a" />
 
-   Los códigos de estado 403 Forbidden indican que la ruta existe, pero tu cliente no tiene permiso para acceder directamente. Esto es una     señal valiosa: hay contenido protegido que podría explotarse por otros medios.
+   Los códigos de estado 403 Forbidden indican que la ruta existe, pero tu cliente no tiene permiso para acceder directamente. Esto es una
+   señal valiosa: hay contenido protegido que podría explotarse por otros medios.
+
    En tu gobuster aparecieron rutas como:
 
-   - `.htaccess`, `.htpasswd`, `/server-status`
+   - `/.htaccess`, `/.htpasswd`, `/server-status`
+   - Archivos con `.html`, `.txt`, `.php`
+
+   Pero todos con 403 ⇒ eso significa que están allí, pero no son accesibles de forma directa desde el navegador o curl.
 
 4. 🛡️ **Escaneo con Nikto revela dominio virtual:**
    ```

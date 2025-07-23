@@ -40,6 +40,7 @@ La fase inicial se enfocó en descubrir los servicios expuestos en la máquina o
 | 80/tcp  | open   | http     | Apache httpd 2.4.54 ((Debian)) |
 
 **Puerto 22/tcp:** Servicio SSH activo (OpenSSH 8.9p1)
+
 **Puerto 80/tcp:** Servidor HTTP Apache activo. Se observará más a fondo en la siguiente fase.
 
 Este escaneo inicial permite enfocar el análisis en el servicio web, donde se encuentra una posible vía de explotación

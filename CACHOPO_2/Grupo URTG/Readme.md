@@ -208,25 +208,46 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
      <img width="442" height="128" alt="image" src="https://github.com/user-attachments/assets/5a842ba2-b8d0-4a18-977c-93e390e20c5b" />
 
 3. 🔍 **Análisis del archivo**
+
+     Se revisa el contenido con el comando:
+
+     ```bash
+     cat cocineros.txt
+     ```
+     
+     Y aparece esto:
+
+     <img width="442" height="283" alt="image" src="https://github.com/user-attachments/assets/542acaba-9fa8-46c8-9fc4-780c09fe229e" />
+
+     Se verifica el tipo real del archivo
+
    ```bash
    file cocineros.txt
    ```
+
+    <img width="191" height="49" alt="image" src="https://github.com/user-attachments/assets/23f7b1cc-5987-4922-bdbd-a95d88ae0b6c" />
+
    > Resultado: Formato cifrado CDFV2
 
-4. 📝 **Renombrar para apertura como documento**
+    Esto significa que:
+   
+    cocineros.txt es en realidad un archivo ofimático antiguo en formato OLE (Composite Document File V2), ¡y está cifrado!
+    Es común en archivos .doc (Word 97-2003), .xls, .ppt y puede requerir una contraseña para abrirse.
+
+5. 📝 **Renombrar para apertura como documento**
    ```bash
    mv cocineros.txt cocineros.doc
    libreoffice cocineros.doc
    ```
 
-5. 🔐 **Ataque de contraseña con John the Ripper**
+6. 🔐 **Ataque de contraseña con John the Ripper**
    ```bash
    python3 /usr/share/john/office2john.py cocineros.doc > hash.txt
    john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
    ```
    > Contraseña: `horse1`
 
-6. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
+7. 🧑‍💻 **Contenido recuperado**: usuarios posibles → `Sofia`, `Carlos`, `Luis`
 
 ---
 

@@ -81,37 +81,67 @@ El propósito de este ejercicio es simular un entorno de intrusión controlada m
    Pero todos con 403 ⇒ eso significa que están allí, pero no son accesibles de forma directa desde el navegador o curl.
 
 4. 🛡️ **Escaneo con Nikto revela dominio virtual:**
+
+   Herramienta para detectar configuraciones erróneas o archivos escondidos
+
+   <img width="442" height="283" alt="image" src="https://github.com/user-attachments/assets/2ffc43a9-f7ba-4e3f-8f79-bd22cb3e6341" />
+
+   **Hallazgo importante:**
+
+   plaintext
+
+   CopiarEditar
+
+   Root page / redirects to: http://cachopo.thl/
+   
+   Esto significa que el sitio redirige automáticamente a un dominio virtual llamado:
+
    ```
    http://cachopo.thl
    ```
 
-5. 🛠️ **Solución: añadir dominio al archivo de hosts**
+6. 🛠️ **Solución: añadir dominio al archivo de hosts**
    ```bash
    echo "172.20.10.2 cachopo.thl" >> /etc/hosts
    ```
+   Se abre en el navegador la dirección http://cachopo.thl y esto permite ver el sitio real:
+
+   <img width="442" height="368" alt="image" src="https://github.com/user-attachments/assets/2911bb27-622e-4b85-b50a-3c175f35254c" />
+
+
 
 ---
 
 ## 🖼️ Análisis de Imagen y Esteganografía
 
 1. 📥 **Descarga de imagen desde el sitio**
-2. 🔍 **Verificación de metadatos**
+
+      Se abre la imagen en una nueva ventana y se procede a descargarla como: cachopo.jpg.
+
+      <img width="442" height="246" alt="image" src="https://github.com/user-attachments/assets/fbfd31da-dae2-4b43-ad44-7e0b96bcacfe" />
+
+      Ingreso a la carpeta Downloads, ejecuto ls para confirmar que el archivo está ahí y posteriormente verifico con file el tipo de
+      archivo, verificando que sea una imagen.
+
+      <img width="442" height="114" alt="image" src="https://github.com/user-attachments/assets/3f75dc22-1dfb-4f5f-b354-e96e5cea2b28" />
+
+3. 🔍 **Verificación de metadatos**
    ```bash
    exiftool cachopo.jpg
    ```
 
-3. 🔐 **Intento de extracción con steghide**
+4. 🔐 **Intento de extracción con steghide**
    ```bash
    steghide extract -sf cachopo.jpg
    ```
 
-4. 🔓 **Ataque por diccionario con stegcracker**
+5. 🔓 **Ataque por diccionario con stegcracker**
    ```bash
    stegcracker cachopo.jpg /usr/share/wordlists/rockyou.txt
    ```
    > Contraseña encontrada: `doggies`
 
-5. 📂 **Extracción del archivo oculto**
+6. 📂 **Extracción del archivo oculto**
    ```bash
    steghide extract -sf cachopo.jpg -p doggies
    ```

@@ -160,8 +160,54 @@ Con privilegios de superusuario (root), se accede al directorio /root, donde hab
 <h1 align="center"><img width="930" height="59" alt="image" src="https://github.com/user-attachments/assets/4c18ed73-ea04-46b7-b76f-06dfdf711350" /></h1>
 
 
+## :nine:  Conclusiones
 
+La máquina CTF "CACHOPO" permitió aplicar múltiples técnicas ofensivas de ciberseguridad, simulando un entorno realista con vulnerabilidades comunes. A lo largo del ejercicio se abordaron las siguientes etapas:
 
+•	Detección de servicios mediante escaneo de puertos
+
+•	Análisis de un sitio WordPress vulnerable
+
+•	Explotación de una inyección SQL
+
+•	Extracción de archivos ocultos mediante esteganografía
+
+•	Ataque de fuerza bruta contra SSH
+
+•	Escalamiento de privilegios mediante binario mal configurado
+
+•	Obtención de la flag como root
+
+Este ejercicio demuestra la importancia de mantener buenas prácticas de seguridad como:
+
+•	Evitar contraseñas débiles
+
+•	Auditar plugins en CMS
+•	Utilizar rutas absolutas en scripts privilegiados
+
+•	Aplicar el principio de privilegio mínimo
+
+## :blue_book: Referencias Consultadas :ledger:
+
+- American Psychological Association. (2020). Publication manual of the American Psychological Association (7.a ed.). American Psychological Association.
+
+- Nmap. (s.f.). Nmap: the network mapper. https://nmap.org/
+
+- WPScan. (s.f.). WordPress security scanner. https://wpscan.com/
+
+- sqlmap. (s.f.). Automated SQL injection and database takeover tool. https://sqlmap.org/
+
+- Stegcracker. (s.f.). Stegcracker: A fast steganography brute-force tool written in Python. https://github.com/Paradoxis/Stegcracker
+
+- THC Hydra. (s.f.). Hydra: very fast network logon cracker. https://github.com/vanhauser-thc/thc-hydra
+
+- John the Ripper. (s.f.). John the Ripper password cracker. https://www.openwall.com/john/
+
+- Rockyou.txt. (2009). SecLists/Passwords/probable-v2-top12000.txt. https://github.com/danielmiessler/SecLists
+
+- pache Software Foundation. (s.f.). Apache HTTP Server Version 2.4 Documentation. https://httpd.apache.org/docs/2.4/
+
+- OpenSSH. (s.f.). OpenSSH. https://www.openssh.com/
 
 
 
